@@ -1,1 +1,231 @@
+package Service;
 
+import DataBase.DataBase;
+import Entity.Ad;
+import java.sql.*;
+import java.util.*;
+
+public class ServiceAd {
+
+    private Connection con = DataBase.getInstance().getConnection();
+
+    private Statement ste;
+
+    public ServiceAd() {
+
+        try {
+            ste = con.createStatement();
+
+        } catch (SQLException ex) {
+
+            System.out.println(ex);
+        }
+    }
+
+    public void addAd(Ad ad) throws SQLException {
+        String req = "INSERT INTO ad (`ad_id`,`depdate`, `duration`, `provider_id`, `description`, `image`)" + "VALUES ('" + ad.getAd_id() + "','" + ad.getDepdate() + "','" + ad.getDuration() + "','" + ad.getProvider_id() + "','" + ad.getDescription() + "','" + ad.getImage() + "');";
+        ste.executeUpdate(req);
+        System.out.println("element insere!!");
+    }
+
+    public void updateAd(int ad_id, String description) throws SQLException {
+        String requete = "UPDATE ad SET `description`='" + description + "' WHERE ad_id ='" + ad_id + "'";
+        ste.executeUpdate(requete);
+        System.out.println("element updated !");
+    }
+
+    public void deleteAd(int ad_id) throws SQLException {
+        String requete = "DELETE FROM `ad` WHERE `ad`.`ad_id` = " + ad_id + ";";
+        ste.executeUpdate(requete);
+        System.out.println("elment deleted!!");
+
+    }
+
+    public List<Ad> readAll() throws SQLException {
+        List<Ad> list = new ArrayList<>();
+        ResultSet res = ste.executeQuery("select * from ad");
+        Ad ad = null;
+        while (res.next()) {
+            ad = new Ad(res.getDate(2), res.getInt(3), res.getInt(4), res.getString(5), res.getString(6));
+            list.add(ad);
+        }
+        return list;
+
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package Entity;
+
+import java.sql.*;
+
+
+public class Ad {
+
+    private int ad_id;
+    private Date depdate;
+    private int duration;
+    private int provider_id;
+    private String description;
+    private String image;
+
+    public Ad() {
+    }
+
+    public Ad(int ad_id, Date depdate, int duration, int provider_id, String description, String image) {
+        this.ad_id = ad_id;
+        this.depdate = depdate;
+        this.duration = duration;
+        this.provider_id = provider_id;
+        this.description = description;
+        this.image = image;
+    }
+    
+    public Ad(Date depdate, int duration, int provider_id, String description, String image) {
+        this.depdate = depdate;
+        this.duration = duration;
+        this.provider_id = provider_id;
+        this.description = description;
+        this.image = image;
+    }
+
+    
+    public int getAd_id() {
+        return ad_id;
+    }
+
+    public void setAd_id(int ad_id) {
+        this.ad_id = ad_id;
+    }
+
+    public Date getDepdate() {
+        return depdate;
+    }
+
+    public void setDepdate(Date depdate) {
+        this.depdate = depdate;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public int getProvider_id() {
+        return provider_id;
+    }
+
+    public void setProvider_id(int provider_id) {
+        this.provider_id = provider_id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    @Override
+    public String toString() {
+        return "Ad{" + "ad_id=" + ad_id + ", depdate=" + depdate + ", duration=" + duration + ", provider_id=" + provider_id + ", description=" + description + ", image=" + image + '}';
+    }
+
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package Test;
+
+import Service.*;
+import Entity.Ad;
+import java.sql.*;
+
+import java.text.*;
+import java.util.*;
+
+public class Test {
+
+    public static void main(String[] args) throws ParseException, SQLException {
+
+        java.util.Date utilDate = new SimpleDateFormat("yyyy-mm-dd").parse("2019-05-05");
+        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+        Ad ad1 = new Ad(sqlDate, 1, 1, "test description", "image1.jpg");
+        // Ad ad2 = new Ad(sqlDate, 10,1, "test description2", "image2.jpg");
+
+        ServiceAd s = new ServiceAd();
+        try {
+            s.addAd(ad1);
+       //   s.addAd(ad2);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+
+        List<Ad> list1 = null;
+
+        try {
+            list1 = s.readAll();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        System.out.println(list1);
+
+        //  s.deleteAd(7);
+        try {
+            s.updateAd(8, "test3 description");
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+
+        list1 = s.readAll();
+        System.out.println(list1);
+
+    }
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package DataBase;
+
+import java.sql.*;
+
+public class DataBase {
+
+    private static DataBase data;
+    static private Connection con;
+    static String url = "jdbc:mysql://localhost:3306/fixit";
+    static String login = "root";
+    static String pwd = "";
+    static Statement ste;
+
+    private DataBase() {
+
+        try {
+            con = DriverManager.getConnection(url, login, pwd);
+            ste = con.createStatement();
+            System.out.println("connection successful!");
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+    }
+
+    public Connection getConnection() {
+        return con;
+    }
+
+    public static DataBase getInstance() {
+        if (data == null) {
+            data = new DataBase();
+        }
+        return data;
+    }
+
+}
