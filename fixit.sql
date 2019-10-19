@@ -1,11 +1,11 @@
--- phpMyAdmin SQL Dump
--- version 4.8.5
+﻿-- phpMyAdmin SQL Dump
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 16 oct. 2019 à 11:32
--- Version du serveur :  5.7.26
--- Version de PHP :  7.2.18
+-- Généré le :  sam. 19 oct. 2019 à 10:58
+-- Version du serveur :  5.7.19
+-- Version de PHP :  5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -30,13 +30,14 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `ad`;
 CREATE TABLE IF NOT EXISTS `ad` (
-  `ad_id` int(11) NOT NULL,
-  `depdate` date NOT NULL,
-  `duration` int(11) NOT NULL,
-  `provider_id` int(11) NOT NULL,
+  `Id_ad` int(11) NOT NULL,
+  `Id_provider` int(11) NOT NULL,
+  `ad_name` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `availability` datetime NOT NULL,
   `description` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
-  `image` text COLLATE utf8_unicode_ci NOT NULL,
-  KEY `provider_id_fk2` (`provider_id`)
+  `published _at` timestamp NOT NULL,
+  `image` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  KEY `provider_id_fk2` (`Id_provider`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -47,10 +48,11 @@ CREATE TABLE IF NOT EXISTS `ad` (
 
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
-  `admin_id` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_admin` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`admin_id`)
+  PRIMARY KEY (`Id_admin`),
+  UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -61,18 +63,17 @@ CREATE TABLE IF NOT EXISTS `admin` (
 
 DROP TABLE IF EXISTS `ask_service`;
 CREATE TABLE IF NOT EXISTS `ask_service` (
-  `ask_service_id` int(11) NOT NULL AUTO_INCREMENT,
-  `service_id` int(11) NOT NULL,
+  `Id_ask_service` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_service` int(11) NOT NULL,
   `date` date NOT NULL,
   `duration` int(11) NOT NULL,
-  `price` float NOT NULL,
   `description` varchar(1000) NOT NULL,
-  `client_id` int(11) NOT NULL,
-  `status_id` int(11) NOT NULL,
-  PRIMARY KEY (`ask_service_id`),
-  KEY `service_id_fk` (`service_id`),
-  KEY `client_id_fk` (`client_id`),
-  KEY `status_id_fk` (`status_id`)
+  `Id_client` int(11) NOT NULL,
+  `Id_status` int(11) NOT NULL,
+  PRIMARY KEY (`Id_ask_service`),
+  KEY `service_id_fk` (`Id_service`),
+  KEY `client_id_fk` (`Id_client`),
+  KEY `status_id_fk` (`Id_status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -83,10 +84,10 @@ CREATE TABLE IF NOT EXISTS `ask_service` (
 
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE IF NOT EXISTS `category` (
-  `category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_category` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
   `description` int(11) NOT NULL,
-  PRIMARY KEY (`category_id`)
+  PRIMARY KEY (`Id_category`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -97,18 +98,27 @@ CREATE TABLE IF NOT EXISTS `category` (
 
 DROP TABLE IF EXISTS `client`;
 CREATE TABLE IF NOT EXISTS `client` (
-  `client_id` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_client` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
-  `city` varchar(50) NOT NULL,
+  `address` varchar(255) NOT NULL,
   `phone` int(11) NOT NULL,
   `mail` varchar(255) NOT NULL,
-  `fidelity_pt` int(11) NOT NULL,
-  `image` text NOT NULL,
-  PRIMARY KEY (`client_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `fidelity_pt` int(11) DEFAULT NULL,
+  `image` text,
+  PRIMARY KEY (`Id_client`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `client`
+--
+
+INSERT INTO `client` (`Id_client`, `username`, `password`, `first_name`, `last_name`, `address`, `phone`, `mail`, `fidelity_pt`, `image`) VALUES
+(2, 'aymenbm', 'qsdf', 'ay', 'bn', 'ariana', 0, '***@***.**', NULL, NULL),
+(3, 'aymen', 'aze', 'aymbm', 'ben', 'ar', 123456789, 'aym@esprit.tn', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -118,11 +128,11 @@ CREATE TABLE IF NOT EXISTS `client` (
 
 DROP TABLE IF EXISTS `comment`;
 CREATE TABLE IF NOT EXISTS `comment` (
-  `comment_id` int(11) NOT NULL AUTO_INCREMENT,
-  `client_id` int(11) NOT NULL,
+  `Id_comment` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_client` int(11) NOT NULL,
   `description` text COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`comment_id`),
-  KEY `client_id_fk3` (`client_id`)
+  PRIMARY KEY (`Id_comment`),
+  KEY `client_id_fk3` (`Id_client`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -133,11 +143,11 @@ CREATE TABLE IF NOT EXISTS `comment` (
 
 DROP TABLE IF EXISTS `c_claim`;
 CREATE TABLE IF NOT EXISTS `c_claim` (
-  `claim_id` int(11) NOT NULL AUTO_INCREMENT,
-  `client_id` int(11) NOT NULL,
+  `Id_claimC` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_client` int(11) NOT NULL,
   `description` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`claim_id`),
-  KEY `client_id_fk2` (`client_id`)
+  PRIMARY KEY (`Id_claimC`),
+  KEY `client_id_fk2` (`Id_client`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -148,19 +158,28 @@ CREATE TABLE IF NOT EXISTS `c_claim` (
 
 DROP TABLE IF EXISTS `provider`;
 CREATE TABLE IF NOT EXISTS `provider` (
-  `provider_id` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_provider` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(10) NOT NULL,
   `password` varchar(30) NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
-  `city` varchar(30) NOT NULL,
+  `address` varchar(255) NOT NULL,
   `phone` int(11) NOT NULL,
   `mail` varchar(255) NOT NULL,
-  `rating` float NOT NULL,
-  `image` text NOT NULL,
-  `like_nb` int(11) NOT NULL,
-  PRIMARY KEY (`provider_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `rating` float DEFAULT NULL,
+  `image` text,
+  `like_nb` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Id_provider`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `provider`
+--
+
+INSERT INTO `provider` (`Id_provider`, `username`, `password`, `first_name`, `last_name`, `address`, `phone`, `mail`, `rating`, `image`, `like_nb`) VALUES
+(1, 'aymenbm', 'azerty', 'aymen', 'ben mehrez', 'ariana', 20843310, 'aymen.benmehrez@esprit.tn', NULL, NULL, NULL),
+(2, 'aymenbm2', 'azerty', 'aymen', 'ben mehrez', 'ariana', 20843310, 'aymen.benmehrez@esprit.tn', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -170,12 +189,12 @@ CREATE TABLE IF NOT EXISTS `provider` (
 
 DROP TABLE IF EXISTS `provider_category`;
 CREATE TABLE IF NOT EXISTS `provider_category` (
-  `provider_category_id` int(11) NOT NULL AUTO_INCREMENT,
-  `provider_id` int(11) NOT NULL,
-  `category_id` int(11) NOT NULL,
-  PRIMARY KEY (`provider_category_id`),
-  KEY `category_id_fk` (`category_id`),
-  KEY `provider_id_fk` (`provider_id`) USING BTREE
+  `Id_provider_category` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_provider` int(11) NOT NULL,
+  `Id_category` int(11) NOT NULL,
+  PRIMARY KEY (`Id_provider_category`),
+  KEY `category_id_fk` (`Id_category`),
+  KEY `provider_id_fk` (`Id_provider`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -186,11 +205,11 @@ CREATE TABLE IF NOT EXISTS `provider_category` (
 
 DROP TABLE IF EXISTS `p_claim`;
 CREATE TABLE IF NOT EXISTS `p_claim` (
-  `p_claim_id` int(11) NOT NULL AUTO_INCREMENT,
-  `provider_id` int(11) NOT NULL,
+  `Id_claimP` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_provider` int(11) NOT NULL,
   `description` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`p_claim_id`),
-  KEY `provider_id_fk3` (`provider_id`)
+  PRIMARY KEY (`Id_claimP`),
+  KEY `provider_id_fk3` (`Id_provider`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -201,11 +220,11 @@ CREATE TABLE IF NOT EXISTS `p_claim` (
 
 DROP TABLE IF EXISTS `service`;
 CREATE TABLE IF NOT EXISTS `service` (
-  `service_id` int(11) NOT NULL AUTO_INCREMENT,
-  `category_id` int(11) NOT NULL,
+  `Id_service` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_category` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
-  PRIMARY KEY (`service_id`),
-  KEY `category_id_fk2` (`category_id`)
+  PRIMARY KEY (`Id_service`),
+  KEY `category_id_fk2` (`Id_category`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -216,12 +235,12 @@ CREATE TABLE IF NOT EXISTS `service` (
 
 DROP TABLE IF EXISTS `service_status`;
 CREATE TABLE IF NOT EXISTS `service_status` (
-  `status_id` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_status` int(11) NOT NULL AUTO_INCREMENT,
   `not_confirmed` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `confirmed` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `canceled` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `completed` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`status_id`)
+  PRIMARY KEY (`Id_status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -232,46 +251,46 @@ CREATE TABLE IF NOT EXISTS `service_status` (
 -- Contraintes pour la table `ad`
 --
 ALTER TABLE `ad`
-  ADD CONSTRAINT `provider_id_fk2` FOREIGN KEY (`provider_id`) REFERENCES `provider` (`provider_id`);
+  ADD CONSTRAINT `provider_id_fk2` FOREIGN KEY (`Id_provider`) REFERENCES `provider` (`Id_provider`);
 
 --
 -- Contraintes pour la table `ask_service`
 --
 ALTER TABLE `ask_service`
-  ADD CONSTRAINT `client_id_fk` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`),
-  ADD CONSTRAINT `service_id_fk` FOREIGN KEY (`service_id`) REFERENCES `service` (`service_id`),
-  ADD CONSTRAINT `status_id_fk` FOREIGN KEY (`status_id`) REFERENCES `service_status` (`status_id`);
+  ADD CONSTRAINT `client_id_fk` FOREIGN KEY (`Id_client`) REFERENCES `client` (`Id_client`),
+  ADD CONSTRAINT `service_id_fk` FOREIGN KEY (`Id_service`) REFERENCES `service` (`Id_service`),
+  ADD CONSTRAINT `status_id_fk` FOREIGN KEY (`Id_status`) REFERENCES `service_status` (`Id_status`);
 
 --
 -- Contraintes pour la table `comment`
 --
 ALTER TABLE `comment`
-  ADD CONSTRAINT `client_id_fk3` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`);
+  ADD CONSTRAINT `client_id_fk3` FOREIGN KEY (`Id_client`) REFERENCES `client` (`Id_client`);
 
 --
 -- Contraintes pour la table `c_claim`
 --
 ALTER TABLE `c_claim`
-  ADD CONSTRAINT `client_id_fk2` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`);
+  ADD CONSTRAINT `client_id_fk2` FOREIGN KEY (`Id_client`) REFERENCES `client` (`Id_client`);
 
 --
 -- Contraintes pour la table `provider_category`
 --
 ALTER TABLE `provider_category`
-  ADD CONSTRAINT `category_id_fk` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`),
-  ADD CONSTRAINT `provider_id_fk` FOREIGN KEY (`provider_id`) REFERENCES `provider` (`provider_id`);
+  ADD CONSTRAINT `category_id_fk` FOREIGN KEY (`Id_category`) REFERENCES `category` (`Id_category`),
+  ADD CONSTRAINT `provider_id_fk` FOREIGN KEY (`Id_provider`) REFERENCES `provider` (`Id_provider`);
 
 --
 -- Contraintes pour la table `p_claim`
 --
 ALTER TABLE `p_claim`
-  ADD CONSTRAINT `provider_id_fk3` FOREIGN KEY (`provider_id`) REFERENCES `provider` (`provider_id`);
+  ADD CONSTRAINT `provider_id_fk3` FOREIGN KEY (`Id_provider`) REFERENCES `provider` (`Id_provider`);
 
 --
 -- Contraintes pour la table `service`
 --
 ALTER TABLE `service`
-  ADD CONSTRAINT `category_id_fk2` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`);
+  ADD CONSTRAINT `category_id_fk2` FOREIGN KEY (`Id_category`) REFERENCES `category` (`Id_category`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
