@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ReadserviceController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="900.0">
+         <image>
+            <Image url="@../../../../../Desktop/affichage/Background.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="499.0" fitWidth="703.0" layoutX="90.0" layoutY="63.0">
+         <image>
+            <Image url="@../../../../../Desktop/affichage/add%20cadre.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="49.0" fitWidth="368.0" layoutX="14.0" layoutY="14.0">
+         <image>
+            <Image url="@../../../../../Desktop/affichage/logo%20fixit.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="206.0" layoutY="242.0" text="Category :" underline="true">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
+      <Label layoutX="201.0" layoutY="375.0" prefHeight="35.0" prefWidth="127.0" text="Name :" underline="true">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
+      <TextField fx:id="readcategory" layoutX="344.0" layoutY="247.0" />
+      <TextField fx:id="readname" layoutX="344.0" layoutY="380.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AddserviceController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="900.0">
+         <image>
+            <Image url="@../../../../../Desktop/Layers/Background.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="492.0" fitWidth="732.0" layoutX="89.0" layoutY="78.0">
+         <image>
+            <Image url="@../../../../../Desktop/Layers/add%20cadre.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="317.0" layoutX="14.0" layoutY="14.0">
+         <image>
+            <Image url="@../../../../../Desktop/Layers/logo%20fixit.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="45.0" layoutX="646.0" layoutY="525.0">
+         <image>
+            <Image url="@../../../../../Desktop/Layers/icon%20confirm.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="addservicebtn" layoutX="691.0" layoutY="525.0" mnemonicParsing="false" onAction="#addService" prefHeight="47.0" prefWidth="132.0" style="-fx-background-color: #2a78e4;" text="Confirm" textAlignment="CENTER" textFill="#fff7f7">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="203.0" layoutY="273.0" prefHeight="33.0" prefWidth="121.0" text="Category :" underline="true">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="203.0" layoutY="378.0" prefHeight="17.0" prefWidth="121.0" text="Name :" underline="true">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="servicecategory" layoutX="353.0" layoutY="278.0" text="1" />
+      <TextField fx:id="servicename" layoutX="353.0" layoutY="383.0" text="ccccc" />
+   </children>
+</AnchorPane>
