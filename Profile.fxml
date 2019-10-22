@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ProfileController">
+   <children>
+      <AnchorPane layoutX="7.0" layoutY="14.0" minHeight="0.0" minWidth="0.0" prefHeight="85.0" prefWidth="886.0">
+         <children>
+            <ImageView accessibleRole="CHECK_MENU_ITEM" fitHeight="27.0" fitWidth="21.0" layoutX="807.0" layoutY="29.0" onMouseClicked="#optionsClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/upload.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="499.0" layoutY="25.0" onMouseClicked="#NotifBClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/17991914_890502197775345_6053390201303634486_n_1_1_1_5.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="551.0" layoutY="25.0" onMouseClicked="#MessageClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Twitter_UI-17-512.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Home" fitHeight="48.0" fitWidth="126.0" layoutX="53.0" layoutY="19.0" onMouseClicked="#BackHome" onMousePressed="#BackHome" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Fixit.PNG" />
+               </image>
+            </ImageView>
+            <TextField layoutX="244.0" layoutY="27.0" />
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="437.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/51KHmHZGHUL.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Separator layoutY="100.0" prefHeight="0.0" prefWidth="900.0" />
+      <AnchorPane layoutX="7.0" layoutY="104.0" prefHeight="494.0" prefWidth="211.0">
+         <children>
+            <Separator layoutX="198.0" orientation="VERTICAL" prefHeight="494.0" prefWidth="2.0" />
+            <Label layoutX="54.0" layoutY="43.0" text="Availability" textFill="#7aa8e1">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#d8e5f2" height="407.0" layoutX="6.0" layoutY="77.0" stroke="#e4e4e4" strokeType="INSIDE" width="187.0" />
+            <ImageView fitHeight="67.0" fitWidth="90.0" layoutX="14.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/calendar.png" />
+               </image>
+            </ImageView>
+            <DatePicker layoutX="9.0" layoutY="169.0" prefHeight="10.0" prefWidth="180.0" />
+         </children>
+      </AnchorPane>
+      <ScrollPane layoutX="212.0" layoutY="111.0" prefHeight="479.0" prefWidth="674.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="648.0" prefWidth="664.0">
+               <children>
+                  <ImageView fitHeight="119.0" fitWidth="117.0" layoutX="27.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/gardener.png" />
+                     </image>
+                  </ImageView>
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#d8e5f2" height="156.0" layoutX="-3.0" layoutY="150.0" stroke="WHITE" strokeType="INSIDE" width="653.0" />
+                  <Label layoutX="169.0" layoutY="33.0" text="UsrName" />
+                  <TextArea layoutX="6.0" layoutY="146.0" prefHeight="141.0" prefWidth="621.0" text="This is my description" />
+                  <ImageView fx:id="star2" fitHeight="36.0" fitWidth="56.0" layoutX="212.0" layoutY="66.0" onMouseEntered="#Rated" onMousePressed="#Rated" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/etoileOff.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="star3" fitHeight="36.0" fitWidth="56.0" layoutX="248.0" layoutY="66.0" onMouseEntered="#Rated" onMousePressed="#Rated" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/etoileOff.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="star4" fitHeight="36.0" fitWidth="56.0" layoutX="284.0" layoutY="66.0" onMouseEntered="#Rated" onMousePressed="#Rated" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/etoileOff.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="star5" fitHeight="36.0" fitWidth="56.0" layoutX="320.0" layoutY="66.0" onMouseEntered="#Rated" onMousePressed="#Rated" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/etoileOff.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="star1" fitHeight="36.0" fitWidth="56.0" focusTraversable="true" layoutX="176.0" layoutY="66.0" onMouseEntered="#Rated" onMousePressed="#Rated" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/etoileOff.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblRating" layoutX="375.0" layoutY="74.0" text="Rating" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
