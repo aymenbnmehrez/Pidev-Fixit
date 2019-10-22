@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.Avatar?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ReclamationController">
+   <children>
+    <AnchorPane layoutX="9.0" layoutY="14.0" minHeight="0.0" minWidth="0.0" prefHeight="85.0" prefWidth="886.0">
+         <children>
+            <Label layoutX="625.0" layoutY="34.0" text="UsrName" />
+            <ImageView accessibleRole="CHECK_MENU_ITEM" fitHeight="27.0" fitWidth="21.0" layoutX="807.0" layoutY="29.0" onMouseClicked="#optionsClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/upload.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="499.0" layoutY="25.0" onMouseClicked="#NotifBClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/17991914_890502197775345_6053390201303634486_n_1_1_1_5.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="551.0" layoutY="25.0" onMouseClicked="#MessageClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Twitter_UI-17-512.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Home" fitHeight="48.0" fitWidth="126.0" layoutX="53.0" layoutY="19.0" onMouseClicked="#BackHome" onMousePressed="#BackHome" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Fixit.PNG" />
+               </image>
+            </ImageView>
+            <Avatar layoutX="724.0" layoutY="22.0">
+               <image>
+                  <Image url="@Images/gardener.png" />
+               </image>
+            </Avatar>
+         
+               </children>
+      </AnchorPane>
+    <AnchorPane layoutX="14.0" layoutY="106.0" minHeight="0.0" minWidth="0.0" prefHeight="486.0" prefWidth="886.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" blendMode="BLUE" depthTest="ENABLE" fill="#d5e2ee" height="455.0" layoutX="39.0" layoutY="8.0" stroke="BLACK" strokeType="INSIDE" width="816.0" />
+            <Label layoutX="257.0" layoutY="47.0" text="Why would you send this claim? explain in details your problem" textAlignment="CENTER" />
+            <TextArea fx:id="claimDescription" layoutX="188.0" layoutY="175.0" prefHeight="136.0" prefWidth="495.0" promptText="write your claim here " />
+            <Button fx:id="SendClaimBtn" layoutX="629.0" layoutY="353.0" mnemonicParsing="false" onMouseClicked="#SendClaim" text="Send" />
+            <RadioButton fx:id="claimFromC" layoutX="336.0" layoutY="112.0" mnemonicParsing="false" selected="true" text="Client">
+               <toggleGroup>
+                  <ToggleGroup fx:id="User" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="ClaimFromP" layoutX="504.0" layoutY="112.0" mnemonicParsing="false" text="Jobber" toggleGroup="$User" />
+            <Label layoutX="235.0" layoutY="118.0" text="You are a :" />
+         </children>
+      </AnchorPane>
+      <Separator layoutX="-3.0" layoutY="100.0" prefHeight="0.0" prefWidth="900.0" />
+   </children>
+</Pane>
