@@ -1,9 +1,9 @@
-﻿-- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 19 oct. 2019 à 10:58
+-- Généré le :  mer. 23 oct. 2019 à 13:21
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -37,8 +37,16 @@ CREATE TABLE IF NOT EXISTS `ad` (
   `description` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   `published _at` timestamp NOT NULL,
   `image` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `Nb_Likes` int(11) NOT NULL,
   KEY `provider_id_fk2` (`Id_provider`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Déchargement des données de la table `ad`
+--
+
+INSERT INTO `ad` (`Id_ad`, `Id_provider`, `ad_name`, `availability`, `description`, `published _at`, `image`, `Nb_Likes`) VALUES
+(1, 2, 'doors', '2019-10-10 00:00:00', 'lkjhgfd', '2019-09-30 23:00:00', '', 1);
 
 -- --------------------------------------------------------
 
@@ -110,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `client` (
   `image` text,
   PRIMARY KEY (`Id_client`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `client`
@@ -148,7 +156,18 @@ CREATE TABLE IF NOT EXISTS `c_claim` (
   `description` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`Id_claimC`),
   KEY `client_id_fk2` (`Id_client`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Déchargement des données de la table `c_claim`
+--
+
+INSERT INTO `c_claim` (`Id_claimC`, `Id_client`, `description`) VALUES
+(1, 2, 'noooo'),
+(7, 2, 'big big problem'),
+(12, 2, 'ffffffffffff'),
+(17, 3, 'xxyyzz'),
+(18, 3, 'xxyyzz');
 
 -- --------------------------------------------------------
 
@@ -168,18 +187,17 @@ CREATE TABLE IF NOT EXISTS `provider` (
   `mail` varchar(255) NOT NULL,
   `rating` float DEFAULT NULL,
   `image` text,
-  `like_nb` int(11) DEFAULT NULL,
   PRIMARY KEY (`Id_provider`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `provider`
 --
 
-INSERT INTO `provider` (`Id_provider`, `username`, `password`, `first_name`, `last_name`, `address`, `phone`, `mail`, `rating`, `image`, `like_nb`) VALUES
-(1, 'aymenbm', 'azerty', 'aymen', 'ben mehrez', 'ariana', 20843310, 'aymen.benmehrez@esprit.tn', NULL, NULL, NULL),
-(2, 'aymenbm2', 'azerty', 'aymen', 'ben mehrez', 'ariana', 20843310, 'aymen.benmehrez@esprit.tn', NULL, NULL, NULL);
+INSERT INTO `provider` (`Id_provider`, `username`, `password`, `first_name`, `last_name`, `address`, `phone`, `mail`, `rating`, `image`) VALUES
+(1, 'aymenbm', 'azerty', 'aymen', 'ben mehrez', 'ariana', 20843310, 'aymen.benmehrez@esprit.tn', 78, NULL),
+(2, 'aymenbm2', 'azerty', 'aymen', 'ben mehrez', 'ariana', 20843310, 'aymen.benmehrez@esprit.tn', 40, NULL);
 
 -- --------------------------------------------------------
 
@@ -210,7 +228,18 @@ CREATE TABLE IF NOT EXISTS `p_claim` (
   `description` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`Id_claimP`),
   KEY `provider_id_fk3` (`Id_provider`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Déchargement des données de la table `p_claim`
+--
+
+INSERT INTO `p_claim` (`Id_claimP`, `Id_provider`, `description`) VALUES
+(1, 1, 'dddddddd'),
+(3, 1, 'dddddddd'),
+(4, 1, 'dddddddd'),
+(5, 1, 'hello'),
+(6, 1, 'i have a problem');
 
 -- --------------------------------------------------------
 
