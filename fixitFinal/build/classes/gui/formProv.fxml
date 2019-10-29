@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FormProvController">
+   <children>
+      <Label layoutX="79.0" layoutY="155.0" text="Name">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="80.0" layoutY="234.0" text="Username">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="80.0" layoutY="301.0" text="City">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="490.0" layoutY="361.0" text="Mail">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="498.0" layoutY="306.0" text="phone">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="488.0" layoutY="164.0" text="Family_Name">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="492.0" layoutY="228.0" text="Password">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="pfnom" layoutX="201.0" layoutY="158.0" prefHeight="25.0" prefWidth="166.0" />
+      <TextField fx:id="punom" layoutX="200.0" layoutY="231.0" prefHeight="25.0" prefWidth="166.0" />
+      <TextField fx:id="pcity" layoutX="200.0" layoutY="311.0" prefHeight="25.0" prefWidth="167.0" />
+      <TextField fx:id="pmail" layoutX="651.0" layoutY="364.0" />
+      <TextField fx:id="plnom" layoutX="643.0" layoutY="171.0" />
+      <TextField fx:id="ppass" layoutX="646.0" layoutY="237.0" />
+      <TextField fx:id="pph" layoutX="645.0" layoutY="304.0" />
+      <Button layoutX="726.0" layoutY="505.0" mnemonicParsing="false" onAction="#ajouterProvider" text="Validate" />
+      <ImageView fitHeight="34.0" fitWidth="43.0" layoutX="431.0" layoutY="360.0">
+         <image>
+            <Image url="@../icons/58-581748_email-envelope-icon-envelope-icon-hd-png-download.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="52.0" layoutX="18.0" layoutY="298.0">
+         <image>
+            <Image url="@../icons/48-484762_location-gateway-tire-service-center-address-icon-png.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="113.0" fitWidth="361.0" layoutX="17.0" layoutY="9.0">
+         <image>
+            <Image url="@../icons/Capture10.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="40.0" layoutX="426.0" layoutY="232.0">
+         <image>
+            <Image url="@../icons/130-1303682_security-password-2-icon-password-icon-in-png.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="22.0" layoutY="147.0">
+         <image>
+            <Image url="@../icons/5065916-stockvader-predicted-adig-user-profile-icon-png-clipart-profile-icon-png-880_880_preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="429.0" layoutY="295.0">
+         <image>
+            <Image url="@../icons/phone+telephone+icon-1320087273381945535.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="42.0" fitWidth="43.0" layoutX="22.0" layoutY="226.0">
+         <image>
+            <Image url="@../icons/5065916-stockvader-predicted-adig-user-profile-icon-png-clipart-profile-icon-png-880_880_preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="40.0" layoutX="432.0" layoutY="159.0">
+         <image>
+            <Image url="@../icons/5065916-stockvader-predicted-adig-user-profile-icon-png-clipart-profile-icon-png-880_880_preview.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="76.0" layoutY="367.0" text="Experience">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="54.0" fitWidth="63.0" layoutX="13.0" layoutY="358.0">
+         <image>
+            <Image url="@../icons/kisspng-computer-icons-experience-stagiair-experience-5b20efb23108d8.3685866915288851702009.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="pexp" layoutX="192.0" layoutY="373.0" prefHeight="154.0" prefWidth="186.0" />
+   </children>
+</AnchorPane>

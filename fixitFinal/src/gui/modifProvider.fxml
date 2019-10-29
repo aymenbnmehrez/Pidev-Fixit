@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gui.ModifProviderController">
+   <children>
+      <Label layoutX="89.0" layoutY="217.0" text="Name">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="90.0" layoutY="284.0" text="City">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="89.0" layoutY="339.0" text="Mail">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="508.0" layoutY="368.0" text="phone">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="498.0" layoutY="226.0" text="Family_Name">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="502.0" layoutY="290.0" text="Password">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="pfnom" layoutX="228.0" layoutY="220.0" />
+      <TextField fx:id="pcity" layoutX="231.0" layoutY="294.0" />
+      <TextField fx:id="pmail" layoutX="231.0" layoutY="342.0" />
+      <TextField fx:id="plnom" layoutX="653.0" layoutY="233.0" />
+      <TextField fx:id="ppass" layoutX="656.0" layoutY="299.0" />
+      <TextField fx:id="pph" layoutX="655.0" layoutY="366.0" />
+      <ImageView fitHeight="34.0" fitWidth="43.0" layoutX="30.0" layoutY="338.0">
+         <image>
+            <Image url="@../icons/58-581748_email-envelope-icon-envelope-icon-hd-png-download.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="52.0" layoutX="28.0" layoutY="281.0">
+         <image>
+            <Image url="@../icons/48-484762_location-gateway-tire-service-center-address-icon-png.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="113.0" fitWidth="361.0" layoutX="27.0" layoutY="19.0">
+         <image>
+            <Image url="@../icons/Capture10.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="40.0" layoutX="436.0" layoutY="294.0">
+         <image>
+            <Image url="@../icons/130-1303682_security-password-2-icon-password-icon-in-png.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="43.0" layoutX="32.0" layoutY="209.0">
+         <image>
+            <Image url="@../icons/5065916-stockvader-predicted-adig-user-profile-icon-png-clipart-profile-icon-png-880_880_preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="439.0" layoutY="357.0">
+         <image>
+            <Image url="@../icons/phone+telephone+icon-1320087273381945535.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="40.0" layoutX="442.0" layoutY="221.0">
+         <image>
+            <Image url="@../icons/5065916-stockvader-predicted-adig-user-profile-icon-png-clipart-profile-icon-png-880_880_preview.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="90.0" layoutY="154.0" mnemonicParsing="false" onAction="#getInfo" text="getData" />
+      <Button layoutX="421.0" layoutY="445.0" mnemonicParsing="false" onAction="#updateProvider" text="update" />
+   </children>
+</AnchorPane>

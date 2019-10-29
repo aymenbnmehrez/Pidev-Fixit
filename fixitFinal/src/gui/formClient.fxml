@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FormClientController">
+   <children>
+      <ImageView fitHeight="104.0" fitWidth="337.0" layoutY="-1.0">
+         <image>
+            <Image url="@../icons/Capture10.JPG" />
+         </image>
+      </ImageView>
+      <Button layoutX="29.0" layoutY="495.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="156.0" text="Retour" />
+      <Button layoutX="677.0" layoutY="492.0" mnemonicParsing="false" onAction="#ajouterClient" prefHeight="51.0" prefWidth="162.0" text="Valider" />
+      <Label layoutX="98.0" layoutY="161.0" prefHeight="38.0" prefWidth="84.0" text="Name :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="563.0" layoutY="163.0" prefHeight="30.0" prefWidth="129.0" text="Family Name :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="120.0" layoutY="260.0" />
+      <Label layoutX="89.0" layoutY="245.0" text="Username :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="102.0" layoutY="317.0" text="E-mail :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="106.0" layoutY="378.0" text="Phone number :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="565.0" layoutY="319.0" text="City:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="553.0" layoutY="247.0" text="Password :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="cfnom" layoutX="259.0" layoutY="167.0" prefHeight="25.0" prefWidth="156.0" />
+      <TextField fx:id="cunom" layoutX="257.0" layoutY="249.0" prefHeight="25.0" prefWidth="158.0" />
+      <TextField fx:id="cmail" layoutX="256.0" layoutY="320.0" prefHeight="25.0" prefWidth="156.0" />
+      <TextField fx:id="cph" layoutX="257.0" layoutY="380.0" />
+      <TextField fx:id="clnom" layoutX="693.0" layoutY="164.0" />
+      <TextField fx:id="cpass" cache="true" layoutX="696.0" layoutY="248.0" />
+      <TextField fx:id="ccity" layoutX="699.0" layoutY="327.0" />
+      <ImageView fitHeight="38.0" fitWidth="49.0" layoutX="38.0" layoutY="376.0">
+         <image>
+            <Image url="@../icons/phone+telephone+icon-1320087273381945535.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="44.0" layoutX="44.0" layoutY="158.0">
+         <image>
+            <Image url="@../icons/5065916-stockvader-predicted-adig-user-profile-icon-png-clipart-profile-icon-png-880_880_preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="44.0" layoutX="502.0" layoutY="160.0">
+         <image>
+            <Image url="@../icons/5065916-stockvader-predicted-adig-user-profile-icon-png-clipart-profile-icon-png-880_880_preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="44.0" layoutX="37.0" layoutY="238.0">
+         <image>
+            <Image url="@../icons/5065916-stockvader-predicted-adig-user-profile-icon-png-clipart-profile-icon-png-880_880_preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="29.0" fitWidth="37.0" layoutX="501.0" layoutY="245.0">
+         <image>
+            <Image url="@../icons/130-1303682_security-password-2-icon-password-icon-in-png.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="29.0" fitWidth="37.0" layoutX="46.0" layoutY="316.0">
+         <image>
+            <Image url="@../icons/58-581748_email-envelope-icon-envelope-icon-hd-png-download.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="39.0" fitWidth="49.0" layoutX="498.0" layoutY="311.0">
+         <image>
+            <Image url="@../icons/48-484762_location-gateway-tire-service-center-address-icon-png.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
