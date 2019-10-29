@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #D82036;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.PaimentController">
+   <children>
+      <JFXTextField fx:id="tf_yearexp" layoutX="18.0" layoutY="114.0" prefHeight="31.0" prefWidth="56.0" promptText="YY" style="-fx-background-color: #D8D2D3;" />
+      <JFXTextField fx:id="tf_card" focusColor="#0d34ab" layoutX="18.0" layoutY="44.0" prefHeight="31.0" prefWidth="241.0" promptText="Card Number" style="-fx-background-color: #D8D2D3;" unFocusColor="#433939" />
+      <JFXTextField fx:id="tf_monthexp" layoutX="111.0" layoutY="114.0" prefHeight="31.0" prefWidth="56.0" promptText="MM" style="-fx-background-color: #D8D2D3;" />
+      <JFXTextField fx:id="tf_cvc" layoutX="14.0" layoutY="193.0" prefHeight="31.0" prefWidth="155.0" promptText="CVC" style="-fx-background-color: #D8D2D3;" />
+      <JFXButton layoutX="21.0" layoutY="313.0" onAction="#confirmPaiement" prefHeight="64.0" prefWidth="261.0" style="-fx-background-color: #D8D2D3;" text="CONFIRM">
+         <font>
+            <Font size="26.0" />
+         </font></JFXButton>
+      <Label fx:id="lb_succes" layoutX="2.0" layoutY="252.0" prefHeight="31.0" prefWidth="300.0" textFill="#0cff34">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

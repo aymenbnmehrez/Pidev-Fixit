@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.ClientController">
+   <children>
+      <AnchorPane layoutY="98.0" prefHeight="500.0" prefWidth="187.0" style="-fx-background-color: #D82036;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="98.0">
+         <children>
+            <JFXButton fx:id="btn_request" layoutX="-1.0" layoutY="93.0" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="197.0" style="-fx-background-color: #D8D2D3;" text="My requests" />
+            <JFXButton fx:id="btn_ask" layoutY="46.0" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="197.0" style="-fx-background-color: #D8D2D3;" text="Ask for service" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pn_all" layoutX="196.0" layoutY="98.0" prefHeight="502.0" prefWidth="713.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="187.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="98.0">
+         <children>
+            <Pane fx:id="pn_elect" prefHeight="502.0" prefWidth="713.0" style="-fx-background-color: #FFFFFF;" />
+            <Pane fx:id="pn_elect" prefHeight="532.0" prefWidth="743.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="39.0" layoutY="51.0" text="I need to  :" />
+                  <JFXComboBox fx:id="cb_servElect" layoutX="184.0" layoutY="46.0" promptText="Select service" />
+                  <Label layoutX="39.0" layoutY="116.0" text="Date of service :" />
+                  <JFXDatePicker fx:id="dp_asElect" layoutX="184.0" layoutY="112.0" />
+                  <Label layoutX="39.0" layoutY="184.0" text="Start at  :" />
+                  <Label layoutX="39.0" layoutY="321.0" text="Estimate duration :" />
+                  <JFXTextField fx:id="tf_durElect" layoutX="184.0" layoutY="317.0" prefHeight="26.0" prefWidth="145.0" />
+                  <JFXTextArea fx:id="tx_descElect" layoutX="175.0" layoutY="370.0" prefHeight="68.0" prefWidth="484.0" />
+                  <Label layoutX="39.0" layoutY="395.0" text="Description :" />
+                  <JFXButton fx:id="btn_share21" layoutX="611.0" layoutY="457.0" onAction="#shareAskServiceElect" style="-fx-background-color: #D82036;" text="Share" />
+                  <JFXComboBox fx:id="cb_startElect" layoutX="175.0" layoutY="179.0" prefHeight="28.0" prefWidth="205.0" />
+                  <JFXButton fx:id="btn_back" layoutX="49.0" layoutY="457.0" onAction="#handleButtonAction" style="-fx-background-color: #D82036;" text="Back" />
+                  <Label layoutX="39.0" layoutY="257.0" text="Price :" />
+                  <JFXTextField fx:id="tf_priceElect" layoutX="172.0" layoutY="251.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="pn_gard" layoutY="-1.0" prefHeight="532.0" prefWidth="743.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="39.0" layoutY="51.0" text="I need to  :" />
+                  <JFXComboBox fx:id="cb_servGard" layoutX="184.0" layoutY="46.0" promptText="Select service" />
+                  <Label layoutX="39.0" layoutY="125.0" text="Date of service :" />
+                  <JFXDatePicker fx:id="dp_asGard" layoutX="184.0" layoutY="121.0" />
+                  <Label layoutX="39.0" layoutY="190.0" text="Start at  :" />
+                  <Label layoutX="39.0" layoutY="321.0" text="Estimate duration :" />
+                  <JFXTextField fx:id="tf_durGard" layoutX="184.0" layoutY="317.0" prefHeight="26.0" prefWidth="145.0" />
+                  <JFXTextArea fx:id="tx_descGard" layoutX="175.0" layoutY="370.0" prefHeight="68.0" prefWidth="484.0" />
+                  <Label layoutX="39.0" layoutY="395.0" text="Description :" />
+                  <JFXButton fx:id="btn_share2" layoutX="611.0" layoutY="457.0" onAction="#shareAskServiceGard" style="-fx-background-color: #D82036;" text="Share" />
+                  <JFXComboBox fx:id="cb_startGard" layoutX="175.0" layoutY="185.0" prefHeight="28.0" prefWidth="205.0" />
+                  <JFXButton fx:id="btn_back2" layoutX="43.0" layoutY="457.0" onAction="#handleButtonAction" style="-fx-background-color: #D82036;" text="Back" />
+                  <JFXTextField fx:id="tf_priceGard" layoutX="181.0" layoutY="253.0" />
+                  <Label layoutX="43.0" layoutY="256.0" text="Price :" />
+               </children>
+            </Pane>
+            <Pane fx:id="pn_edit" prefHeight="512.0" prefWidth="723.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="39.0" layoutY="51.0" text="I need to  :" />
+                  <JFXComboBox fx:id="cb_serv1" layoutX="184.0" layoutY="46.0" promptText="Select service" />
+                  <Label layoutX="39.0" layoutY="125.0" text="Date of service :" />
+                  <JFXDatePicker fx:id="dp_as1" layoutX="184.0" layoutY="121.0" />
+                  <Label layoutX="39.0" layoutY="185.0" text="Start at  :" />
+                  <Label layoutX="39.0" layoutY="321.0" text="Estimate duration :" />
+                  <JFXTextField fx:id="tf_dur1" layoutX="184.0" layoutY="317.0" prefHeight="26.0" prefWidth="145.0" />
+                  <JFXTextArea fx:id="tx_desc1" layoutX="175.0" layoutY="370.0" prefHeight="68.0" prefWidth="484.0" />
+                  <Label layoutX="39.0" layoutY="395.0" text="Description :" />
+                  <JFXButton fx:id="btn_share1" layoutX="611.0" layoutY="457.0" onAction="#editAskService" style="-fx-background-color: #D82036;" text="Confirm" />
+                  <JFXComboBox fx:id="cb_start1" layoutX="175.0" layoutY="180.0" prefHeight="28.0" prefWidth="200.0" />
+                  <JFXTextField fx:id="tf_price1" layoutX="184.0" layoutY="255.0" />
+                  <Label layoutX="39.0" layoutY="259.0" text="Price :" />
+               </children>
+            </Pane>
+            <Pane fx:id="pn_plumb" prefHeight="532.0" prefWidth="743.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="39.0" layoutY="51.0" text="I need to  :" />
+                  <JFXComboBox fx:id="cb_serv" layoutX="184.0" layoutY="46.0" promptText="Select service" />
+                  <Label layoutX="39.0" layoutY="125.0" text="Date of service :" />
+                  <JFXDatePicker fx:id="dp_as" layoutX="184.0" layoutY="121.0" />
+                  <Label layoutX="43.0" layoutY="199.0" text="Start at  :" />
+                  <Label layoutX="40.0" layoutY="334.0" text="Estimate duration :" />
+                  <JFXTextField fx:id="tf_dur" layoutX="187.0" layoutY="330.0" prefHeight="26.0" prefWidth="145.0" />
+                  <JFXTextArea fx:id="tx_desc" layoutX="175.0" layoutY="370.0" prefHeight="68.0" prefWidth="484.0" />
+                  <Label layoutX="39.0" layoutY="395.0" text="Description :" />
+                  <JFXButton fx:id="btn_share" layoutX="611.0" layoutY="457.0" onAction="#shareAskService" style="-fx-background-color: #D82036;" text="Share" />
+                  <JFXComboBox fx:id="cb_start" layoutX="184.0" layoutY="194.0" prefHeight="28.0" prefWidth="205.0" />
+                  <JFXButton fx:id="btn_back3" layoutX="45.0" layoutY="455.0" onAction="#handleButtonAction" style="-fx-background-color: #D82036;" text="Back" />
+                  <Label layoutX="43.0" layoutY="266.0" text="Price :" />
+                  <JFXTextField fx:id="tf_price" layoutX="184.0" layoutY="260.0" />
+               </children></Pane>
+            <Pane fx:id="pn_ask" prefHeight="502.0" prefWidth="713.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="51.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/gardening.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="133.0" fitWidth="200.0" layoutX="403.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/plambing.jpg" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btn_gard" layoutX="112.0" layoutY="204.0" onAction="#handleButtonAction" style="-fx-background-color: #D82036;" text="Gardening" />
+                  <JFXButton fx:id="btn_plumb" layoutX="481.0" layoutY="204.0" onAction="#handleButtonAction" style="-fx-background-color: #D82036;" text="Plumbing" />
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="51.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/electricity.jpg" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btn_elect" layoutX="118.0" layoutY="427.0" onAction="#handleButtonAction" style="-fx-background-color: #D82036;" text="Electricity" />
+               </children>
+            </Pane>
+            <Pane fx:id="pn_request" layoutX="9.0" prefHeight="502.0" prefWidth="701.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TableView fx:id="table" layoutY="48.0" prefHeight="371.0" prefWidth="723.0">
+                     <columns>
+                        <TableColumn fx:id="cl_name" prefWidth="214.99993896484375" text="Name Service" />
+                        <TableColumn fx:id="cl_date" prefWidth="175.00003051757812" text="Date" />
+                        <TableColumn fx:id="cl_started_at" minWidth="0.0" prefWidth="131.0" text="Started at" />
+                        <TableColumn fx:id="cl_status" prefWidth="202.0" text="Status" />
+                     </columns>
+                  </TableView>
+                  <JFXButton fx:id="btn_delete" layoutX="662.0" layoutY="465.0" onAction="#deleteAskService" style="-fx-background-color: #D82036;" text="Delete" />
+                  <JFXButton fx:id="btn_edit" layoutX="588.0" layoutY="465.0" onAction="#openEditAskService" style="-fx-background-color: #D82036;" text="Edit" />
+                  <JFXTextField fx:id="tf_filter" layoutX="7.0" layoutY="14.0" prefHeight="26.0" prefWidth="635.0" promptText="Search request 🔎" />
+                  <JFXButton fx:id="btn_pay" layoutX="39.0" layoutY="466.0" onAction="#displayPaiement" style="-fx-background-color: #D82036;" text="Pay" />
+               </children></Pane>
+         </children></AnchorPane>
+      <AnchorPane prefHeight="102.0" prefWidth="910.0" style="-fx-background-color: #D82036;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="name" layoutX="711.0" layoutY="63.0" />
+            <ImageView fitHeight="103.0" fitWidth="185.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logo.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>
