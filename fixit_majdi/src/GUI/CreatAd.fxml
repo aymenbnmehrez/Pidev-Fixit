@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.creatAdController">
+   <children>
+      <ImageView fx:id="backgrAddAd" fitHeight="740.0" fitWidth="1094.0" layoutX="-9.0" layoutY="-5.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/Background.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="frameAddAd" fitHeight="623.0" fitWidth="938.0" layoutX="68.0" layoutY="54.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/add%20cadre.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfAdName" layoutX="116.0" layoutY="251.0" prefHeight="26.0" prefWidth="227.0" promptText="Tape the title of ad" style="-fx-background-color: #FFFAF0;" />
+      <Text fx:id="text1" fill="#070707" layoutX="118.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title of Ad" wrappingWidth="209.517578125">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Text fx:id="text2" fill="#070707" layoutX="120.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Availability" wrappingWidth="209.517578125">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnAttImage" layoutX="129.0" layoutY="477.0" maxHeight="60.0" maxWidth="270.0" mnemonicParsing="false" onAction="#attach_image" prefHeight="34.0" prefWidth="187.0" style="-fx-font-size: 20;" text="Attach images" />
+      <Text fx:id="text3" fill="#070707" layoutX="630.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" textAlignment="CENTER" wrappingWidth="209.51756405830383">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="tfdescription" layoutX="542.0" layoutY="246.0" prefHeight="230.0" prefWidth="410.0" promptText="Tape a description of your Ad" wrapText="true" />
+      <Button fx:id="btnAdd" layoutX="757.0" layoutY="520.0" maxHeight="60.0" maxWidth="270.0" mnemonicParsing="false" onAction="#creatAd" prefHeight="50.0" prefWidth="122.0" text="Confirm" />
+      <DatePicker fx:id="pAvailablity" layoutX="119.0" layoutY="363.0" prefHeight="26.0" prefWidth="227.0" promptText="Choose your availability" />
+      <ImageView fx:id="logoAddAd" fitHeight="96.0" fitWidth="263.0" layoutX="31.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/logo%20fixit.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_backHomeprovider" layoutX="635.0" layoutY="519.0" mnemonicParsing="false" onAction="#back_HomeProvider" prefHeight="50.0" prefWidth="112.0" text="Back" />
+      <Label fx:id="verif_img" alignment="TOP_LEFT" layoutX="334.0" layoutY="533.0" prefHeight="31.0" prefWidth="156.0" textFill="RED" />
+      <Label fx:id="textUpImg" alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="90.0" layoutY="533.0" prefHeight="31.0" prefWidth="227.0" />
+      <Label fx:id="verif_title" layoutX="135.0" layoutY="284.0" prefHeight="17.0" prefWidth="178.0" textFill="RED" />
+      <Label fx:id="verif_availability" layoutX="129.0" layoutY="396.0" prefHeight="17.0" prefWidth="178.0" textFill="RED" />
+   </children>
+</AnchorPane>

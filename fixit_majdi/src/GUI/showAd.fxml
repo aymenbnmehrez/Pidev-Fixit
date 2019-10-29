@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ShowAdController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="898.0" layoutY="-2.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/Background.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="675.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/51KHmHZGHUL.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="TableAd" layoutX="324.0" layoutY="96.0" onMouseClicked="#select_ad" prefHeight="252.0" prefWidth="553.0">
+        <columns>
+            <TableColumn fx:id="C_title" prefWidth="145.0" text="Title" />
+            <TableColumn fx:id="C_availability" prefWidth="128.0" text="Availability" />
+            <TableColumn fx:id="C_description" minWidth="8.33331298828125" prefWidth="155.0" text="Description" />
+            <TableColumn fx:id="C_published" prefWidth="124.3333740234375" text="Published_At" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="45.0" fitWidth="142.0" layoutX="19.0" layoutY="22.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/logo%20fixit.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnBackHomeClient" layoutX="770.0" layoutY="562.0" mnemonicParsing="false" onAction="#backHomeClient" prefHeight="25.0" prefWidth="107.0" text="Back" />
+      <Label fx:id="txt_Titre" layoutX="21.0" layoutY="97.0" prefHeight="29.0" prefWidth="104.0" text="Titre">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Label fx:id="txt_firstName" layoutX="24.0" layoutY="137.0" prefHeight="29.0" prefWidth="104.0" text="first name">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Label fx:id="txt_lastName" layoutX="26.0" layoutY="178.0" prefHeight="29.0" prefWidth="104.0" text="last name" textFill="#111111">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Label fx:id="txt_addr" layoutX="26.0" layoutY="222.0" prefHeight="29.0" prefWidth="104.0" text="Address">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Label fx:id="txt_availability" layoutX="28.0" layoutY="264.0" prefHeight="29.0" prefWidth="104.0" text="Availability">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Label fx:id="txt_phone" layoutX="29.0" layoutY="302.0" prefHeight="29.0" prefWidth="104.0" text="Phone">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Label fx:id="txt_mail" layoutX="30.0" layoutY="348.0" prefHeight="29.0" prefWidth="104.0" text="E-mail" textFill="#171717">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Label fx:id="txt_rate" layoutX="32.0" layoutY="389.0" prefHeight="29.0" prefWidth="104.0" text="Rate" textFill="#0d0d0d">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Label fx:id="txt_publishedAt" layoutX="134.0" layoutY="557.0" prefHeight="25.0" prefWidth="115.0" text="published at" textFill="#ee0909">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <ImageView fx:id="image_ad" fitHeight="171.0" fitWidth="331.0" layoutX="435.0" layoutY="363.0" onKeyReleased="#searchTable" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="searchInput" layoutX="526.0" layoutY="61.0" onKeyReleased="#searchTable" promptText=" Search an Ad" />
+      <TextArea fx:id="tf_description" layoutX="30.0" layoutY="457.0" prefHeight="89.0" prefWidth="292.0" />
+      <Label fx:id="txt_rate1" layoutX="32.0" layoutY="428.0" prefHeight="29.0" prefWidth="104.0" text="Description">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="tf_titre" layoutX="169.0" layoutY="96.0" prefHeight="25.0" prefWidth="149.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="tf_firstName" layoutX="171.0" layoutY="135.0" prefHeight="25.0" prefWidth="149.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="tf_lastName" layoutX="170.0" layoutY="176.0" prefHeight="25.0" prefWidth="149.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="tf_addr" alignment="TOP_LEFT" layoutX="172.0" layoutY="220.0" prefHeight="25.0" prefWidth="149.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="tf_availability" alignment="TOP_LEFT" layoutX="170.0" layoutY="262.0" prefHeight="25.0" prefWidth="149.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="tf_phone" alignment="TOP_LEFT" layoutX="170.0" layoutY="300.0" prefHeight="25.0" prefWidth="149.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="tf_mail" alignment="TOP_LEFT" layoutX="171.0" layoutY="350.0" prefHeight="25.0" prefWidth="241.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="tf_rate" layoutX="169.0" layoutY="391.0" prefHeight="25.0" prefWidth="149.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="tf_publishedAt" layoutX="241.0" layoutY="555.0" prefHeight="25.0" prefWidth="161.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="185.0" layoutY="61.0" prefHeight="25.0" prefWidth="323.0" text="**select an item from table for more details**" textFill="#f70707">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.HomeController">
+   <children>
+      <AnchorPane cacheShape="false" centerShape="false" layoutX="17.0" layoutY="24.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="85.0" prefWidth="886.0" scaleShape="false">
+         <children>
+            <ImageView accessibleRole="CHECK_MENU_ITEM" fitHeight="27.0" fitWidth="21.0" layoutX="776.0" layoutY="30.0" onMouseClicked="#optionsClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/upload.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="499.0" layoutY="25.0" onMouseClicked="#NotifBClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/17991914_890502197775345_6053390201303634486_n_1_1_1_5.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="551.0" layoutY="25.0" onMouseClicked="#MessageClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/Twitter_UI-17-512.png" />
+               </image></ImageView>
+            <ImageView fx:id="Home" fitHeight="48.0" fitWidth="126.0" layoutX="53.0" layoutY="19.0" onMouseClicked="#BackHome" onMousePressed="#BackHome" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/Fixit.PNG" />
+               </image>
+            </ImageView>
+            <TextField layoutX="244.0" layoutY="27.0" />
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="396.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/51KHmHZGHUL.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="610.0" layoutY="30.0" text="UserName" />
+            <ImageView fitHeight="48.0" fitWidth="50.0" layoutX="684.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/avatar.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Separator layoutX="10.0" layoutY="110.0" prefHeight="0.0" prefWidth="900.0" />
+      <ScrollPane layoutX="10.0" layoutY="113.0" prefHeight="490.0" prefWidth="903.0">
+         <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1020.0" prefWidth="880.0">
+               <children>
+                  <Label layoutX="43.0" layoutY="25.0" text="Find the Perfect Jobber for YOU  " textAlignment="CENTER" textFill="#21a8c9">
+                     <font>
+                        <Font name="Baskerville Old Face" size="21.0" />
+                     </font>
+                  </Label>
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="352.0" layoutX="43.0" layoutY="63.0" stroke="#259fd3" strokeType="INSIDE" width="803.0" />
+                  <ImageView fitHeight="189.0" fitWidth="276.0" layoutX="565.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true" />
+                  <Text layoutX="59.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="For each situation, find the provider whose skills meet your expectations and your level of requirement." wrappingWidth="769.13427734375" />
+                  <Text layoutX="73.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fill out the form and get an estimate of the price and duration" textAlignment="CENTER" wrappingWidth="148.78564453125">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fontSmoothingType="LCD" layoutX="76.0" layoutY="274.0" stroke="#cee3f5" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Ask for a service">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="59.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Capture.PNG" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="344.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Capture1.PNG" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="628.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Capture3.PNG" />
+                     </image>
+                  </ImageView>
+                  <Text fontSmoothingType="LCD" layoutX="344.0" layoutY="271.0" stroke="#cee3f5" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Choose your Jobber">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fontSmoothingType="LCD" layoutX="643.0" layoutY="272.0" stroke="#cee3f5" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Smile, it is done!">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="358.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skilled jobers close to you offer their services" textAlignment="CENTER" wrappingWidth="148.78564453125">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="640.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Jobber does you a favour at the agreed price and date price and duration" textAlignment="CENTER" wrappingWidth="148.78564453125">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Separator layoutX="8.0" layoutY="440.0" prefHeight="0.0" prefWidth="900.0" />
+                  <Label layoutX="43.0" layoutY="485.0" text="Categorys" textFill="#21a8c9">
+                     <font>
+                        <Font name="Baskerville Old Face" size="21.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="140.0" fitWidth="200.0" layoutX="48.0" layoutY="536.0" pickOnBounds="true" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                     <image>
+                        <Image url="@../img/baby-sitter.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="140.0" fitWidth="200.0" layoutX="354.0" layoutY="530.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../img/vetements-jardin-jardinage-gants-fleurs-1270x812.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="140.0" fitWidth="200.0" layoutX="577.0" layoutY="533.0" pickOnBounds="true" AnchorPane.rightAnchor="50.0">
+                     <image>
+                        <Image url="@../img/téléchargé.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="140.0" fitWidth="200.0" layoutX="64.0" layoutY="755.0" pickOnBounds="true" AnchorPane.leftAnchor="50.0">
+                     <image>
+                        <Image url="@../img/téléchargé%20(2).jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="140.0" fitWidth="200.0" layoutX="363.0" layoutY="755.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../img/Demenagement.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="140.0" fitWidth="200.0" layoutX="647.0" layoutY="755.0" pickOnBounds="true" AnchorPane.rightAnchor="50.0">
+                     <image>
+                        <Image url="@../img/b9769d32fbb9c8ff2fc1cebaf8119.jpeg" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="749.0" layoutY="945.0" mnemonicParsing="false" onMouseClicked="#GoToCategorys" onMousePressed="#GoToCategorys" text="See more" />
+                  <Label layoutX="109.0" layoutY="690.0" text="Baby-sitting">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="424.0" layoutY="681.0" text="Gardening">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="709.0" layoutY="684.0" text="Pumbery">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="121.0" layoutY="910.0" text="Electricity">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="441.0" layoutY="912.0" text="Moving">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="709.0" layoutY="910.0" text="Tinkering">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnShowAd" layoutX="80.0" layoutY="947.0" minHeight="21.0" mnemonicParsing="false" onAction="#showAd" prefHeight="30.0" prefWidth="152.0" text="Show Ads" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
