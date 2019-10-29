@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ReadallsController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0">
+         <children>
+            <ImageView fitHeight="600.0" fitWidth="900.0">
+               <image>
+                  <Image url="@../img/Background.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="48.0" fitWidth="304.0" layoutX="14.0" layoutY="14.0">
+               <image>
+                  <Image url="@../img/logo%20fixit.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="507.0" fitWidth="715.0" layoutX="104.0" layoutY="61.0">
+               <image>
+                  <Image url="@../img/allserv.png" />
+               </image>
+            </ImageView>
+            <TableView fx:id="allservice" layoutX="173.0" layoutY="238.0" onMouseClicked="#update1" prefHeight="242.0" prefWidth="366.0">
+              <columns>
+                <TableColumn fx:id="allid" prefWidth="124.0" text="Name_SERVICE" />
+                <TableColumn fx:id="allcategory" prefWidth="118.0" text="Name_CATEGORY" />
+                <TableColumn fx:id="allname" prefWidth="123.0" text="PICTURE_CATEGORY" />
+              </columns>
+            </TableView>
+            <Button layoutX="580.0" layoutY="232.0" mnemonicParsing="false" onAction="#AddService" prefHeight="39.0" prefWidth="179.0" text="Add Service">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Button>
+            <Button layoutX="580.0" layoutY="288.0" mnemonicParsing="false" onAction="#DeleteService" prefHeight="39.0" prefWidth="179.0" text="Delete Service">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Button>
+            <Button fx:id="updateservice" layoutX="580.0" layoutY="340.0" mnemonicParsing="false" onAction="#updateserv" prefHeight="39.0" prefWidth="179.0" text="Update Service">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <TextField fx:id="modid" layoutX="173.0" layoutY="503.0" />
+            <TextField fx:id="modnom" layoutX="390.0" layoutY="503.0" />
+            <TextField fx:id="rechercherfiled" alignment="CENTER" layoutX="602.0" layoutY="175.0" onKeyPressed="#rechercherService" prefHeight="30.0" prefWidth="135.0" />
+            <Button layoutX="122.0" layoutY="84.0" mnemonicParsing="false" onAction="#PDF" prefHeight="30.0" prefWidth="125.0" text="Generate PDF">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="751.0" layoutY="71.0" mnemonicParsing="false" onAction="#Logout" text="LogOut">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="image" fitHeight="163.0" fitWidth="245.0" layoutX="554.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="verif1" layoutX="380.0" layoutY="544.0" prefHeight="17.0" prefWidth="170.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

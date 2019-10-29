@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FixitController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FIXIT " />
+      <ImageView fitHeight="232.0" fitWidth="908.0" layoutX="-7.0" layoutY="372.0">
+         <image>
+            <Image url="@../icons/Capture3.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="113.0" fitWidth="408.0" layoutX="-6.0">
+         <image>
+            <Image url="@../icons/Capture10.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="144.0" fitWidth="901.0" layoutX="-1.0" layoutY="109.0">
+         <image>
+            <Image url="@../icons/cache_51328930.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="118.0" fitWidth="486.0" layoutX="216.0" layoutY="254.0">
+         <image>
+            <Image url="@../icons/Capture4.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="115.0" fitWidth="506.0" layoutX="395.0" layoutY="-4.0">
+         <image>
+            <Image url="@../../../../../Desktop/Capture15.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="119.0" fitWidth="232.0" layoutX="-1.0" layoutY="253.0">
+         <image>
+            <Image url="@../../../../../Desktop/Capture15.JPG" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="119.0" fitWidth="213.0" layoutX="689.0" layoutY="253.0">
+         <image>
+            <Image url="@../../../../../Desktop/Capture15.JPG" />
+         </image>
+      </ImageView>
+      <Button layoutX="597.0" layoutY="17.0" mnemonicParsing="false" onAction="#authClient" prefHeight="42.0" prefWidth="121.0" text="Connect As Client" textFill="#3db0c4">
+         <font>
+            <Font name="Book Antiqua" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="744.0" layoutY="16.0" mnemonicParsing="false" onAction="#authProvider" prefHeight="43.0" prefWidth="122.0" text="Connect As Jobber" textFill="#27abd3">
+         <font>
+            <Font name="Book Antiqua" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="-1.0" layoutY="578.0" mnemonicParsing="false" onAction="#autheAdmin" text="Admin space" textFill="#25a4a2" />
+   </children>
+</AnchorPane>
