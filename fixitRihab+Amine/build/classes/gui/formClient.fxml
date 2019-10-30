@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.FormClientController">
+   <children>
+      <Label layoutX="111.0" layoutY="80.0" prefHeight="38.0" prefWidth="84.0" text="Name :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="89.0" layoutY="132.0" prefHeight="30.0" prefWidth="129.0" text="Family Name :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="120.0" layoutY="260.0" />
+      <Label layoutX="105.0" layoutY="189.0" text="Username :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="120.0" layoutY="302.0" text="E-mail :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="88.0" layoutY="407.0" prefHeight="30.0" prefWidth="162.0" text="Phone number :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="139.0" layoutY="348.0" text="City:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="111.0" layoutY="243.0" text="Password :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="cfnom" layoutX="240.0" layoutY="83.0" prefHeight="31.0" prefWidth="187.0" />
+      <TextField fx:id="cunom" layoutX="242.0" layoutY="188.0" prefHeight="31.0" prefWidth="187.0" />
+      <TextField fx:id="cmail" layoutX="243.0" layoutY="300.0" prefHeight="31.0" prefWidth="187.0" />
+      <TextField fx:id="cph" layoutX="242.0" layoutY="406.0" />
+      <TextField fx:id="clnom" layoutX="240.0" layoutY="132.0" prefHeight="31.0" prefWidth="187.0" />
+      <TextField fx:id="cpass" cache="true" layoutX="242.0" layoutY="243.0" />
+      <TextField fx:id="cadd" layoutX="242.0" layoutY="347.0" />
+      <JFXButton layoutX="37.0" layoutY="28.0" style="-fx-background-color: D82036;" text="Back" textFill="WHITE" />
+      <JFXButton layoutX="408.0" layoutY="500.0" onAction="#ajouterClient" style="-fx-background-color: D82036;" text="Validate" textFill="WHITE" />
+   </children>
+</AnchorPane>

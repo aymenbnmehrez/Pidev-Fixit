@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AddserviceController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="900.0" layoutX="-89.0" layoutY="3.0">
+         <image>
+            <Image url="@../img/Background.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="492.0" fitWidth="732.0" layoutX="89.0" layoutY="78.0">
+         <image>
+            <Image url="@../img/aff%20cadre.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="317.0" layoutX="14.0" layoutY="14.0">
+         <image>
+            <Image url="@../img/logo%20fixit.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="addservicebtn" contentDisplay="TEXT_ONLY" layoutX="385.0" layoutY="450.0" mnemonicParsing="false" onAction="#addService" prefHeight="39.0" prefWidth="86.0" text="Confirm" textAlignment="CENTER" textFill="#01171e">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="203.0" layoutY="273.0" prefHeight="33.0" prefWidth="121.0" text="Category :" underline="true">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="203.0" layoutY="378.0" prefHeight="17.0" prefWidth="121.0" text="Name :" underline="true">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="servicename" layoutX="353.0" layoutY="383.0" />
+      <TextField fx:id="servicecategory" layoutX="353.0" layoutY="278.0" />
+      <Button layoutX="89.0" layoutY="531.0" mnemonicParsing="false" onAction="#retour" prefHeight="39.0" prefWidth="86.0" text="Back">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Spinner fx:id="spin" layoutX="322.0" layoutY="216.0" />
+      <Label fx:id="verif" layoutX="518.0" layoutY="387.0" prefHeight="17.0" prefWidth="167.0" />
+   </children>
+</AnchorPane>

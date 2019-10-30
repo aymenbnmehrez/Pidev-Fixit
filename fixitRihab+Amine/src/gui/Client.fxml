@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.ClientController">
+   <children>
+      <AnchorPane layoutY="98.0" prefHeight="500.0" prefWidth="187.0" style="-fx-background-color: #D82036;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="98.0">
+         <children>
+            <JFXButton fx:id="btn_request" layoutX="-1.0" layoutY="93.0" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="197.0" style="-fx-background-color: #D8D2D3;" text="My requests" />
+            <JFXButton fx:id="btn_ask" layoutY="46.0" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="197.0" style="-fx-background-color: #D8D2D3;" text="Ask for service" />
+            <JFXButton fx:id="btn_profile" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="197.0" style="-fx-background-color: #D8D2D3;" text="My profile" />
+            <JFXButton fx:id="btn_claim" layoutY="140.0" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="197.0" style="-fx-background-color: #D8D2D3;" text="Send Claim" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pn_all" layoutX="196.0" layoutY="98.0" prefHeight="502.0" prefWidth="713.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="187.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="98.0">
+         <children>
+            <Pane fx:id="pn_elect" prefHeight="502.0" prefWidth="713.0" style="-fx-background-color: #FFFFFF;" />
+            <Pane fx:id="pn_gard" prefHeight="502.0" prefWidth="713.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Button layoutX="88.0" layoutY="198.0" mnemonicParsing="false" onAction="#getNameClient" text="Button" />
+               </children>
+            </Pane>
+            <Pane fx:id="pn_plumb" prefHeight="512.0" prefWidth="723.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="39.0" layoutY="51.0" text="I need to  :" />
+                  <JFXComboBox fx:id="cb_serv" layoutX="184.0" layoutY="46.0" promptText="Select service" />
+                  <Label layoutX="39.0" layoutY="138.0" text="Date of service :" />
+                  <JFXDatePicker fx:id="dp_as" layoutX="184.0" layoutY="134.0" />
+                  <Label layoutX="45.0" layoutY="238.0" text="Start at  :" />
+                  <Label layoutX="39.0" layoutY="321.0" text="Estimate duration :" />
+                  <JFXTextField fx:id="tf_dur" layoutX="184.0" layoutY="317.0" prefHeight="26.0" prefWidth="145.0" />
+                  <JFXTextArea fx:id="tx_desc" layoutX="175.0" layoutY="370.0" prefHeight="68.0" prefWidth="484.0" />
+                  <Label layoutX="39.0" layoutY="395.0" text="Description :" />
+                  <JFXButton fx:id="btn_share" layoutX="611.0" layoutY="457.0" onAction="#shareAskService" style="-fx-background-color: #D82036;" text="Share" />
+                  <JFXComboBox fx:id="cb_start" layoutX="184.0" layoutY="241.0" prefHeight="28.0" prefWidth="205.0" />
+               </children></Pane>
+            <Pane fx:id="pn_edit" prefHeight="512.0" prefWidth="723.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="39.0" layoutY="51.0" text="I need to  :" />
+                  <JFXComboBox fx:id="cb_serv1" layoutX="184.0" layoutY="46.0" promptText="Select service" />
+                  <Label layoutX="39.0" layoutY="138.0" text="Date of service :" />
+                  <JFXDatePicker fx:id="dp_as1" layoutX="184.0" layoutY="134.0" />
+                  <Label layoutX="45.0" layoutY="238.0" text="Start at  :" />
+                  <Label layoutX="39.0" layoutY="321.0" text="Estimate duration :" />
+                  <JFXTextField fx:id="tf_dur1" layoutX="184.0" layoutY="317.0" prefHeight="26.0" prefWidth="145.0" />
+                  <JFXTextArea fx:id="tx_desc1" layoutX="175.0" layoutY="370.0" prefHeight="68.0" prefWidth="484.0" />
+                  <Label layoutX="39.0" layoutY="395.0" text="Description :" />
+                  <JFXButton fx:id="btn_share1" layoutX="611.0" layoutY="457.0" onAction="#editAskService" style="-fx-background-color: #D82036;" text="Confirm" />
+                  <JFXComboBox fx:id="cb_start1" layoutX="175.0" layoutY="232.0" prefHeight="28.0" prefWidth="200.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="pn_request" layoutX="9.0" prefHeight="502.0" prefWidth="701.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TableView fx:id="table" layoutY="48.0" prefHeight="371.0" prefWidth="723.0">
+                     <columns>
+                        <TableColumn fx:id="cl_date" prefWidth="75.0" text="Date" />
+                        <TableColumn fx:id="cl_name" prefWidth="168.0" text="Description" />
+                        <TableColumn fx:id="cl_status" minWidth="0.0" prefWidth="202.00003051757812" text="Duration" />
+                     </columns>
+                  </TableView>
+                  <JFXButton fx:id="btn_delete" layoutX="538.0" layoutY="432.0" onAction="#deleteAskService" style="-fx-background-color: #D82036;" text="Delete" />
+                  <JFXButton fx:id="btn_edit" layoutX="435.0" layoutY="433.0" onAction="#openEditAskService" style="-fx-background-color: #D82036;" text="Edit" />
+                  <JFXTextField fx:id="tf_filter" layoutX="7.0" layoutY="14.0" prefHeight="26.0" prefWidth="635.0" promptText="Search request 🔎" />
+               </children></Pane>
+            <Pane fx:id="pn_ask" prefHeight="502.0" prefWidth="713.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="51.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/gardening.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="133.0" fitWidth="200.0" layoutX="403.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/plambing.jpg" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btn_gard" layoutX="112.0" layoutY="204.0" onAction="#handleButtonAction" style="-fx-background-color: #D82036;" text="Gardening" />
+                  <JFXButton fx:id="btn_plumb" layoutX="481.0" layoutY="204.0" onAction="#handleButtonAction" style="-fx-background-color: #D82036;" text="Plumbing" />
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="51.0" layoutY="274.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/electricity.jpg" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btn_elect" layoutX="118.0" layoutY="427.0" onAction="#handleButtonAction" style="-fx-background-color: #D82036;" text="Electricity" />
+               </children>
+            </Pane>
+            <Pane fx:id="pn_claim" prefHeight="512.0" prefWidth="723.0" style="-fx-background-color: #FFFF;">
+               <children>
+                  <AnchorPane prefHeight="512.0" prefWidth="723.0">
+                     <children>
+                        <Label layoutX="138.0" layoutY="21.0" text="Why would you send this claim? explain in details your problem" textAlignment="CENTER" AnchorPane.leftAnchor="138.0" AnchorPane.topAnchor="21.0" />
+                        <TextArea fx:id="claimDescription" layoutX="102.0" layoutY="188.0" prefHeight="136.0" prefWidth="495.0" promptText="write your claim here " />
+                        <Label fx:id="champObligatoire" layoutX="261.0" layoutY="339.0" opacity="0.0" text="Your claim is obligatory*" />
+                        <JFXButton fx:id="SendClaimBtn" buttonType="RAISED" layoutX="570.0" layoutY="401.0" onMouseClicked="#SendClaim" ripplerFill="#d82036" style="-fx-background-color: #D82036;" text="Send" textFill="WHITE" />
+                        <JFXSpinner fx:id="load" layoutX="524.0" layoutY="401.0" opacity="0.0" prefHeight="31.0" prefWidth="26.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </Pane>
+            <Pane fx:id="pn_profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="723.0">
+               <children>
+                  <ScrollPane layoutY="5.0" prefHeight="512.0" prefWidth="723.0">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="899.0" prefWidth="687.0">
+                           <children>
+                              <ImageView fx:id="Photo" fitHeight="119.0" fitWidth="117.0" layoutX="27.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Ma_partie/src/GUI/Images/gardener.png" />
+                                 </image>
+                              </ImageView>
+                              <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#d7263a" height="156.0" layoutX="-3.0" layoutY="150.0" stroke="WHITE" strokeType="INSIDE" width="653.0" />
+                              <Label fx:id="name" layoutX="169.0" layoutY="33.0" text="UsrName" />
+                              <TextArea layoutX="6.0" layoutY="146.0" prefHeight="141.0" prefWidth="621.0" text="This is my description" />
+                              <ImageView fx:id="star2" fitHeight="36.0" fitWidth="56.0" layoutX="212.0" layoutY="66.0" onMousePressed="#Rated" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/etoileOff.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="star3" fitHeight="36.0" fitWidth="56.0" layoutX="248.0" layoutY="66.0" onMousePressed="#Rated" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/etoileOff.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="star4" fitHeight="36.0" fitWidth="56.0" layoutX="284.0" layoutY="66.0" onMousePressed="#Rated" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/etoileOff.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="star5" fitHeight="36.0" fitWidth="56.0" layoutX="320.0" layoutY="66.0" onMousePressed="#Rated" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/etoileOff.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="star1" fitHeight="36.0" fitWidth="56.0" focusTraversable="true" layoutX="176.0" layoutY="66.0" onMousePressed="#Rated" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/etoileOff.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lblRating" layoutX="375.0" layoutY="74.0" text="Rating" />
+                              <ImageView fx:id="checked" fitHeight="21.0" fitWidth="21.0" layoutX="423.0" layoutY="74.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Ma_partie/src/GUI/Images/checked.png" />
+                                 </image>
+                              </ImageView>
+                              <AnchorPane fx:id="Annonce" layoutX="19.0" layoutY="386.0" prefHeight="487.0" prefWidth="674.0">
+                                 <children>
+                                    <VBox fx:id="vBoxComments" prefHeight="495.0" prefWidth="674.0">
+                                       <children>
+                                          <AnchorPane prefHeight="168.0" prefWidth="674.0">
+                                             <children>
+                                                <Label layoutX="27.0" layoutY="14.0" text="date" />
+                                                <Label layoutX="146.0" layoutY="52.0" text="ad" />
+                                             </children>
+                                          </AnchorPane>
+                                          <HBox prefHeight="215.0" prefWidth="674.0">
+                                             <children>
+                                                <TableView fx:id="tableComment" prefHeight="211.0" prefWidth="690.0">
+                                                  <columns>
+                                                      <TableColumn fx:id="adname" prefWidth="158.0" text="Announcement" />
+                                                    <TableColumn fx:id="Clients" prefWidth="178.0" text="Client" />
+                                                    <TableColumn fx:id="Comments" prefWidth="265.0" text="Comment" />
+                                                  </columns>
+                                                </TableView>
+                                                <AnchorPane prefHeight="211.0" prefWidth="160.0">
+                                                   <children>
+                                                      <ImageView fitHeight="31.0" fitWidth="45.0" layoutX="8.0" layoutY="174.0" onMouseClicked="#SendComment" onMousePressed="#SendComment" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@images/61140.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <MenuButton fx:id="MenuBtn" layoutX="-3.0" layoutY="174.0" mnemonicParsing="false" opacity="0.0" prefHeight="39.0" prefWidth="54.0">
+                                                         <items>
+                                                            <MenuItem fx:id="SprimComment" mnemonicParsing="false" onAction="#suprimComment" text="Delete" />
+                                                            <MenuItem mnemonicParsing="false" onAction="#ModifComment" text="Modify" />
+                                                            <MenuItem fx:id="Details" mnemonicParsing="false" onAction="#getIdAd" onMenuValidation="#getIdAd" text="Details" />
+                                                         </items>
+                                                      </MenuButton>
+                                                      <JFXButton fx:id="Details1" buttonType="RAISED" layoutX="4.0" layoutY="129.0" onAction="#getIdAd" text="Details" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="57.0" prefWidth="674.0">
+                                             <children>
+                                                <TextArea fx:id="comment" prefHeight="57.0" prefWidth="575.0" promptText="Write your comments here" />
+                                                <ImageView fitHeight="36.0" fitWidth="42.0" onMouseClicked="#SendComment" onMousePressed="#SendComment" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@images/gps.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets top="15.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <AnchorPane prefHeight="57.0" prefWidth="68.0">
+                                                   <children>
+                                                      <ImageView fx:id="LikeBtn" accessibleRole="BUTTON" fitHeight="39.0" fitWidth="45.0" layoutY="9.0" onMousePressed="#AddLike" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@images/thumbs-up-like-gesture-512.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label fx:id="Likes" layoutX="39.0" layoutY="38.0" text="Label" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </Pane>
+         </children></AnchorPane>
+      <AnchorPane prefHeight="102.0" prefWidth="910.0" style="-fx-background-color: #D82036;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="name" layoutX="711.0" layoutY="63.0" />
+            <ImageView fitHeight="103.0" fitWidth="185.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/logo.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>
