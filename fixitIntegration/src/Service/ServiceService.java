@@ -67,7 +67,7 @@ public class ServiceService {
     }
     
         public void addService(Service s) throws SQLException{
-      String requete = "INSERT INTO `service` (`Id_service`, `Id_category` , `name_service`) "
+      String requete = "INSERT INTO `service` (`service_id`, `category_id` , `name`) "
               + "VALUES (NULL, '"+s.getCategory_id()+"', '"+s.getName()+"');";
    ste.executeUpdate(requete);
         System.out.println("elment inste");
@@ -85,8 +85,8 @@ public class ServiceService {
     return list;
     
 }
-         public void deleteService(String service)throws SQLException {
-            String requete = "DELETE FROM service WHERE service = '"+service+"'";
+         public void deleteService(String name)throws SQLException {
+            String requete = "DELETE FROM service WHERE name = '"+name+"'";
                 ste.executeUpdate(requete);
          
         }
@@ -96,6 +96,7 @@ public class ServiceService {
             ste.executeUpdate(requete);    
 
     }
+         
 
          public List searchService(String name_service) throws SQLException {
              List<Service> search=new ArrayList<>();

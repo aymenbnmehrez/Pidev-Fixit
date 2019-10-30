@@ -35,6 +35,8 @@ public class FXMLFixitController implements Initializable {
     private TextField username;
     @FXML
     private TextField pwd;
+    @FXML
+    private Button signin;
 
     /**
      * Initializes the controller class.

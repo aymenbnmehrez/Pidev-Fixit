@@ -13,6 +13,7 @@ import com.itextpdf.text.Phrase;
 import com.itextpdf.text.Rectangle;
 import com.itextpdf.text.pdf.ColumnText;
 import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfPageEventHelper;
 import com.itextpdf.text.pdf.PdfTemplate;
 import com.itextpdf.text.pdf.PdfWriter;
 
@@ -20,7 +21,7 @@ import com.itextpdf.text.pdf.PdfWriter;
  *
  * @author asus
  */
-public class HeaderFooter {
+public class HeaderFooter extends PdfPageEventHelper {
       /** The header/footer text. */
     String header;
     /** The template with the total number of pages. */

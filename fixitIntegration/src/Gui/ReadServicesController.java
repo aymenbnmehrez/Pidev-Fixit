@@ -12,8 +12,11 @@ import Service.ServiceService;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.PageSize;
-import com.itextpdf.text.pdf.PdfPageEvent;
+//import com.itextpdf.text.pdf.PdfPageEvent;
 import com.itextpdf.text.pdf.PdfWriter;
+import static com.sun.xml.internal.fastinfoset.alphabet.BuiltInRestrictedAlphabets.table;
+import static fixit.Fixit.getDataObjectList;
+import static fixit.Fixit.PDF_EXTENSION;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -83,12 +86,14 @@ public class ReadServicesController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        allid.setCellFactory(TextFieldTableCell.forTableColumn());
-               allcategory.setCellFactory(TextFieldTableCell.forTableColumn()); 
-               allname.setCellFactory(TextFieldTableCell.forTableColumn()); 
+   public void initialize(URL url, ResourceBundle rb) {
+          //    allid.setCellFactory(TextFieldTableCell.forTableColumn());
+          //     allcategory.setCellFactory(TextFieldTableCell.forTableColumn()); 
+          //     allname.setCellFactory(TextFieldTableCell.forTableColumn()); 
                 initColumns();
                 loadData();
         // TODO
@@ -97,7 +102,7 @@ public class ReadServicesController implements Initializable {
 
         allid.setCellValueFactory(new PropertyValueFactory<>("name"));
         allcategory.setCellValueFactory(new PropertyValueFactory<>("categoryName"));
-        allname.setCellValueFactory(new PropertyValueFactory<>("Picture"));
+        allname.setCellValueFactory(new PropertyValueFactory<>("picture_category"));
 
     }
 
@@ -126,7 +131,7 @@ public class ReadServicesController implements Initializable {
         ServiceService sf = new ServiceService();
         int id = s.getCategory_id();
         String title=s.getPicture_category();
-        FileInputStream input = new FileInputStream("C:\\wamp\\www\\"+title+"");
+        FileInputStream input = new FileInputStream("C:\\wamp64\\www\\"+title+"");
         Image imagee = new Image(input);
         //ImageView  = new ImageView();
         image.setImage(imagee);    
@@ -216,7 +221,7 @@ public class ReadServicesController implements Initializable {
                     new File(TITL + PDF_EXTENSION)));
             HeaderFooter ev =new HeaderFooter();
             ev.setHeader("Test Report");
-            writer.setPageEvent((PdfPageEvent) ev);
+            writer.setPageEvent(ev);
             document.open();
             PDFCreator.addMetaData(document, TITL);
             PDFCreator.addTitlePage(document, TITL);
@@ -238,7 +243,6 @@ public class ReadServicesController implements Initializable {
           
     }
 
-    @FXML
   /*  private void Logout(ActionEvent event) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);       
                 alert.setTitle("Boîte de dialogue de confirmation");

@@ -47,7 +47,7 @@ public class AddServiceController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         SpinnerValueFactory<Integer> x = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 4);
+         SpinnerValueFactory<Integer> x = new SpinnerValueFactory.IntegerSpinnerValueFactory(10, 30,10,10);
         this.spin.setValueFactory(x);
         // TODO
     }    
