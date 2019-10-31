@@ -64,4 +64,28 @@ public class ServiceProvider {
         }
         return false;
     }
+     
+             public Provider getProviderByUsername(String username)throws SQLException{
+        
+            String req ="select * from provider where username='"+username+"'";
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery(req);
+            Provider p=new Provider();
+            if (rs.next()) {
+            p.setProvider_id(rs.getInt("provider_id"));
+            p.setUsername(rs.getString("username"));
+            }
+            return p;
+        }
+             public List<Provider> displayProvider(String username) throws SQLException {
+        List<Provider> list = new ArrayList<>();
+        ResultSet res = ste.executeQuery("select * from provider where username='"+username+"'");
+        Provider cl = null;
+        while (res.next()) {
+            cl = new Provider(res.getInt("provider_id"));
+//            System.out.println("id client : "+cl.getClient_id()+" username : "+cl.getUsername()+" pwd : "+cl.getPassword()+" first name : "+cl.getFirst_name()+" last name : "+cl.getLast_name()+" adress : "+cl.getAdress()+" phone : "+cl.getPhone()+" mail :"+cl.getMail());
+            list.add(cl);
+        }
+        return list;
+    }
 }

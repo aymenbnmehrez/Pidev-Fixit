@@ -8,40 +8,25 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.ClientController">
    <children>
-      <AnchorPane layoutY="98.0" prefHeight="500.0" prefWidth="187.0" style="-fx-background-color: #D82036;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="98.0">
+      <AnchorPane layoutY="102.0" prefHeight="528.0" prefWidth="170.0" style="-fx-background-color: #D82036;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="102.0">
          <children>
             <JFXButton fx:id="btn_request" layoutX="-1.0" layoutY="93.0" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="197.0" style="-fx-background-color: #D8D2D3;" text="My requests" />
+            <JFXButton fx:id="btn_show_ads" layoutX="-2.0" layoutY="140.0" onAction="#handleButtonAction" prefHeight="51.0" prefWidth="191.0" style="-fx-background-color: #D8D2D3;" text="Show Ads" />
             <JFXButton fx:id="btn_ask" layoutY="46.0" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="197.0" style="-fx-background-color: #D8D2D3;" text="Ask for service" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="pn_all" layoutX="196.0" layoutY="98.0" prefHeight="502.0" prefWidth="713.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="187.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="98.0">
          <children>
-            <Pane fx:id="pn_elect" prefHeight="502.0" prefWidth="713.0" style="-fx-background-color: #FFFFFF;" />
-            <Pane fx:id="pn_elect" prefHeight="532.0" prefWidth="743.0" style="-fx-background-color: #FFFFFF;">
-               <children>
-                  <Label layoutX="39.0" layoutY="51.0" text="I need to  :" />
-                  <JFXComboBox fx:id="cb_servElect" layoutX="184.0" layoutY="46.0" promptText="Select service" />
-                  <Label layoutX="39.0" layoutY="116.0" text="Date of service :" />
-                  <JFXDatePicker fx:id="dp_asElect" layoutX="184.0" layoutY="112.0" />
-                  <Label layoutX="39.0" layoutY="184.0" text="Start at  :" />
-                  <Label layoutX="39.0" layoutY="321.0" text="Estimate duration :" />
-                  <JFXTextField fx:id="tf_durElect" layoutX="184.0" layoutY="317.0" prefHeight="26.0" prefWidth="145.0" />
-                  <JFXTextArea fx:id="tx_descElect" layoutX="175.0" layoutY="370.0" prefHeight="68.0" prefWidth="484.0" />
-                  <Label layoutX="39.0" layoutY="395.0" text="Description :" />
-                  <JFXButton fx:id="btn_share21" layoutX="611.0" layoutY="457.0" onAction="#shareAskServiceElect" style="-fx-background-color: #D82036;" text="Share" />
-                  <JFXComboBox fx:id="cb_startElect" layoutX="175.0" layoutY="179.0" prefHeight="28.0" prefWidth="205.0" />
-                  <JFXButton fx:id="btn_back" layoutX="49.0" layoutY="457.0" onAction="#handleButtonAction" style="-fx-background-color: #D82036;" text="Back" />
-                  <Label layoutX="39.0" layoutY="257.0" text="Price :" />
-                  <JFXTextField fx:id="tf_priceElect" layoutX="172.0" layoutY="251.0" />
-               </children>
-            </Pane>
             <Pane fx:id="pn_gard" layoutY="-1.0" prefHeight="532.0" prefWidth="743.0" style="-fx-background-color: #FFFFFF;">
                <children>
                   <Label layoutX="39.0" layoutY="51.0" text="I need to  :" />
@@ -60,6 +45,39 @@
                   <Label layoutX="43.0" layoutY="256.0" text="Price :" />
                </children>
             </Pane>
+            <Pane fx:id="pn_elect" prefHeight="532.0" prefWidth="743.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="39.0" layoutY="51.0" text="I need to  :" />
+                  <JFXComboBox fx:id="cb_servElect" layoutX="184.0" layoutY="46.0" promptText="Select service" />
+                  <Label layoutX="39.0" layoutY="116.0" text="Date of service :" />
+                  <JFXDatePicker fx:id="dp_asElect" layoutX="184.0" layoutY="112.0" />
+                  <Label layoutX="39.0" layoutY="184.0" text="Start at  :" />
+                  <Label layoutX="39.0" layoutY="321.0" text="Estimate duration :" />
+                  <JFXTextField fx:id="tf_durElect" layoutX="184.0" layoutY="317.0" prefHeight="26.0" prefWidth="145.0" />
+                  <JFXTextArea fx:id="tx_descElect" layoutX="175.0" layoutY="370.0" prefHeight="68.0" prefWidth="484.0" />
+                  <Label layoutX="39.0" layoutY="395.0" text="Description :" />
+                  <JFXButton fx:id="btn_share21" layoutX="611.0" layoutY="457.0" onAction="#shareAskServiceElect" style="-fx-background-color: #D82036;" text="Share" />
+                  <JFXComboBox fx:id="cb_startElect" layoutX="175.0" layoutY="179.0" prefHeight="28.0" prefWidth="205.0" />
+                  <JFXButton fx:id="btn_back" layoutX="49.0" layoutY="457.0" onAction="#handleButtonAction" style="-fx-background-color: #D82036;" text="Back" />
+                  <Label layoutX="39.0" layoutY="257.0" text="Price :" />
+                  <JFXTextField fx:id="tf_priceElect" layoutX="172.0" layoutY="251.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="pn_request" layoutX="9.0" prefHeight="502.0" prefWidth="701.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TableView fx:id="table" layoutY="48.0" prefHeight="371.0" prefWidth="723.0">
+                     <columns>
+                        <TableColumn fx:id="cl_name" prefWidth="214.99993896484375" text="Name Service" />
+                        <TableColumn fx:id="cl_date" prefWidth="175.00003051757812" text="Date" />
+                        <TableColumn fx:id="cl_started_at" minWidth="0.0" prefWidth="131.0" text="Started at" />
+                        <TableColumn fx:id="cl_status" prefWidth="202.0" text="Status" />
+                     </columns>
+                  </TableView>
+                  <JFXButton fx:id="btn_delete" layoutX="662.0" layoutY="465.0" onAction="#deleteAskService" style="-fx-background-color: #D82036;" text="Delete" />
+                  <JFXButton fx:id="btn_edit" layoutX="588.0" layoutY="465.0" onAction="#openEditAskService" style="-fx-background-color: #D82036;" text="Edit" />
+                  <JFXTextField fx:id="tf_filter" layoutX="7.0" layoutY="14.0" prefHeight="26.0" prefWidth="635.0" promptText="Search request 🔎" />
+                  <JFXButton fx:id="btn_pay" layoutX="39.0" layoutY="466.0" onAction="#displayPaiement" style="-fx-background-color: #D82036;" text="Pay" />
+               </children></Pane>
             <Pane fx:id="pn_edit" prefHeight="512.0" prefWidth="723.0" style="-fx-background-color: #FFFFFF;">
                <children>
                   <Label layoutX="39.0" layoutY="51.0" text="I need to  :" />
@@ -116,21 +134,121 @@
                   <JFXButton fx:id="btn_elect" layoutX="118.0" layoutY="427.0" onAction="#handleButtonAction" style="-fx-background-color: #D82036;" text="Electricity" />
                </children>
             </Pane>
-            <Pane fx:id="pn_request" layoutX="9.0" prefHeight="502.0" prefWidth="701.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Pane fx:id="pn_show_ads" layoutX="-1.0" layoutY="5.0" prefHeight="549.0" prefWidth="764.0" style="-fx-background-color: #FFFFFF;">
                <children>
-                  <TableView fx:id="table" layoutY="48.0" prefHeight="371.0" prefWidth="723.0">
+                  <TableView fx:id="TableAd" layoutX="241.0" layoutY="85.0" onMouseClicked="#select_ad" prefHeight="228.0" prefWidth="512.0">
                      <columns>
-                        <TableColumn fx:id="cl_name" prefWidth="214.99993896484375" text="Name Service" />
-                        <TableColumn fx:id="cl_date" prefWidth="175.00003051757812" text="Date" />
-                        <TableColumn fx:id="cl_started_at" minWidth="0.0" prefWidth="131.0" text="Started at" />
-                        <TableColumn fx:id="cl_status" prefWidth="202.0" text="Status" />
+                        <TableColumn fx:id="C_title" prefWidth="136.33331298828125" text="Title" />
+                        <TableColumn fx:id="C_availability" prefWidth="81.66668701171875" text="Availability" />
+                        <TableColumn fx:id="C_description" minWidth="8.33331298828125" prefWidth="148.66668701171875" text="Description" />
+                        <TableColumn fx:id="C_published" prefWidth="144.33331298828125" text="Published_At" />
                      </columns>
                   </TableView>
-                  <JFXButton fx:id="btn_delete" layoutX="662.0" layoutY="465.0" onAction="#deleteAskService" style="-fx-background-color: #D82036;" text="Delete" />
-                  <JFXButton fx:id="btn_edit" layoutX="588.0" layoutY="465.0" onAction="#openEditAskService" style="-fx-background-color: #D82036;" text="Edit" />
-                  <JFXTextField fx:id="tf_filter" layoutX="7.0" layoutY="14.0" prefHeight="26.0" prefWidth="635.0" promptText="Search request 🔎" />
-                  <JFXButton fx:id="btn_pay" layoutX="39.0" layoutY="466.0" onAction="#displayPaiement" style="-fx-background-color: #D82036;" text="Pay" />
-               </children></Pane>
+                  <Label fx:id="txt_Titre" layoutX="19.0" layoutY="80.0" prefHeight="24.0" prefWidth="63.0" text="Titre">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="txt_firstName" layoutX="18.0" layoutY="105.0" prefHeight="29.0" prefWidth="59.0" text="first name">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="txt_lastName" layoutX="18.0" layoutY="134.0" prefHeight="29.0" prefWidth="104.0" text="last name" textFill="#111111">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="txt_addr" layoutX="20.0" layoutY="165.0" prefHeight="29.0" prefWidth="104.0" text="Address">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="txt_availability" layoutX="20.0" layoutY="196.0" prefHeight="29.0" prefWidth="104.0" text="Availability">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="txt_publishedAt" layoutX="48.0" layoutY="467.0" prefHeight="25.0" prefWidth="115.0" text="published at" textFill="#ee0909">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="image_ad" fitHeight="146.0" fitWidth="275.0" layoutX="409.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true" />
+                  <TextArea fx:id="tf_description" editable="false" layoutX="21.0" layoutY="381.0" prefHeight="65.0" prefWidth="220.0" wrapText="true" />
+                  <Label fx:id="tf_firstName" layoutX="86.0" layoutY="107.0" prefHeight="25.0" prefWidth="135.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tf_lastName" layoutX="124.0" layoutY="134.0" prefHeight="29.0" prefWidth="99.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tf_addr" alignment="TOP_LEFT" layoutX="125.0" layoutY="167.0" prefHeight="25.0" prefWidth="99.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tf_availability" alignment="TOP_LEFT" layoutX="116.0" layoutY="195.0" prefHeight="25.0" prefWidth="104.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tf_phone" alignment="TOP_LEFT" layoutX="124.0" layoutY="235.0" prefHeight="25.0" prefWidth="113.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tf_mail" alignment="TOP_LEFT" layoutX="89.0" layoutY="313.0" prefHeight="25.0" prefWidth="241.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tf_rate" layoutX="133.0" layoutY="271.0" prefHeight="25.0" prefWidth="66.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="tf_publishedAt" layoutX="144.0" layoutY="467.0" prefHeight="25.0" prefWidth="161.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="91.0" layoutY="42.0" prefHeight="25.0" prefWidth="323.0" text="**select an item from table for more details**" textFill="#f70707">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="txt_phone" layoutX="19.0" layoutY="232.0" prefHeight="29.0" prefWidth="104.0" text="Phone">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="txt_rate1" layoutX="21.0" layoutY="351.0" prefHeight="22.0" prefWidth="84.0" text="Description">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="txt_rate" layoutX="18.0" layoutY="271.0" prefHeight="29.0" prefWidth="104.0" text="Rate" textFill="#0d0d0d">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="txt_mail" layoutX="18.0" layoutY="313.0" prefHeight="29.0" prefWidth="104.0" text="E-mail" textFill="#171717">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="searchInput" layoutX="493.0" layoutY="41.0" onKeyReleased="#searchTable" promptText=" Search an Ad" />
+                  <Label fx:id="tf_titre" layoutX="101.0" layoutY="78.0" prefHeight="25.0" prefWidth="124.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
          </children></AnchorPane>
       <AnchorPane prefHeight="102.0" prefWidth="910.0" style="-fx-background-color: #D82036;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>

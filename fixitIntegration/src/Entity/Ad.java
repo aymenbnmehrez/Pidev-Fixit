@@ -8,11 +8,12 @@ package Entity;
 import java.sql.Date;
 import java.sql.Timestamp;
 
+
 /**
  *
  * @author aymen
  */
-public class Ad {
+public class Ad  {
 
     private int ad_id;
     private int provider_id;
@@ -21,6 +22,16 @@ public class Ad {
     private String description;
     private Timestamp published_at;
     private String image;
+
+    public Ad(int ad_id, String ad_name, Date availability, String description, Timestamp published_at) {
+        this.ad_id = ad_id;
+        this.ad_name = ad_name;
+        this.availability = availability;
+        this.description = description;
+        this.published_at = published_at;
+    }
+
+
 
     public void setAd_id(int ad_id) {
         this.ad_id = ad_id;
@@ -39,6 +50,12 @@ public class Ad {
     }
 
     public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Ad(String ad_name, Date availability, String description) {
+        this.ad_name = ad_name;
+        this.availability = availability;
         this.description = description;
     }
 

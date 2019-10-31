@@ -5,11 +5,15 @@
  */
 package Gui;
 
-import Service.ServiceClient;
+
+
+import Entity.Provider;
 import Service.ServiceProvider;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -39,17 +43,25 @@ public class AuthProviderController implements Initializable {
         // TODO
     }    
       @FXML
-    private void auth(ActionEvent event) throws SQLException, IOException {
+    public void auth(ActionEvent event) throws SQLException, IOException {
         ServiceProvider sp = new ServiceProvider();
+        
         String user = username.getText();
         String password = pwd.getText();
         if (sp.isAuthenticated(user, password) == true) {
             System.out.println("connected");
+               ServiceProvider sevc = new ServiceProvider();       //getting client_id of the authentificated client
+        List<Provider> listC = new ArrayList<>();
+        listC = sevc.displayProvider(user);
+        Provider c = listC.get(0);
+        int idProvider = c.getProvider_id();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Provider.fxml"));
             Parent root = loader.load();
             ProviderController controller = loader.<ProviderController>getController();
             controller.setUser(user);
+            controller.setId(idProvider);
             
+
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setScene(scene);

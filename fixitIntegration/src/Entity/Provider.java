@@ -129,4 +129,9 @@ public class Provider {
         this.password = password;
     }
 
+    public Provider(int provider_id) {
+        this.provider_id = provider_id;
+    }
+    
+
 }
