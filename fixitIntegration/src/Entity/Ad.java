@@ -21,6 +21,15 @@ public class Ad {
     private String description;
     private Timestamp published_at;
     private String image;
+    private int Nb_Likes;
+
+    public int getNb_Likes() {
+        return Nb_Likes;
+    }
+
+    public void setNb_Likes(int Nb_Likes) {
+        this.Nb_Likes = Nb_Likes;
+    }
 
     public void setAd_id(int ad_id) {
         this.ad_id = ad_id;
@@ -68,6 +77,21 @@ public class Ad {
 
     public Timestamp getPublished_at() {
         return published_at;
+    }
+
+    public Ad(int Nb_Likes) {
+        this.Nb_Likes = Nb_Likes;
+    }
+
+    public Ad(int ad_id, int provider_id, String ad_name, Date availability, String description, Timestamp published_at, String image, int Nb_Likes) {
+        this.ad_id = ad_id;
+        this.provider_id = provider_id;
+        this.ad_name = ad_name;
+        this.availability = availability;
+        this.description = description;
+        this.published_at = published_at;
+        this.image = image;
+        this.Nb_Likes = Nb_Likes;
     }
 
     public Ad(int ad_id, int provider_id, String ad_name, Date availability, String description, Timestamp published_at, String image) {

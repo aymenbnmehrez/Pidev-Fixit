@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="60.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.RateController">
+   <children>
+      <ImageView fx:id="star2" fitHeight="36.0" fitWidth="56.0" layoutX="50.0" layoutY="14.0" onMousePressed="#Rated" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/etoileOff.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="star3" fitHeight="36.0" fitWidth="56.0" layoutX="86.0" layoutY="14.0" onMousePressed="#Rated" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/etoileOff.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="star4" fitHeight="36.0" fitWidth="56.0" layoutX="122.0" layoutY="14.0" onMousePressed="#Rated" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/etoileOff.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="star5" fitHeight="36.0" fitWidth="56.0" layoutX="158.0" layoutY="14.0" onMousePressed="#Rated" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/etoileOff.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="star1" fitHeight="36.0" fitWidth="56.0" focusTraversable="true" layoutX="14.0" layoutY="14.0" onMousePressed="#Rated" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/etoileOff.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblRating" layoutX="252.0" layoutY="22.0" text="Rating" />
+   </children>
+</AnchorPane>

@@ -7,31 +7,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Gui.AddServiceController">
+<AnchorPane id="AnchorPane" prefHeight="265.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.AddServiceController">
    <children>
-      <Button fx:id="addservicebtn" contentDisplay="TEXT_ONLY" layoutX="395.0" layoutY="460.0" mnemonicParsing="false" onAction="#addService" prefHeight="39.0" prefWidth="86.0" text="Confirm" textAlignment="CENTER" textFill="#01171e">
+      <Button fx:id="addservicebtn" contentDisplay="TEXT_ONLY" layoutX="219.0" layoutY="212.0" mnemonicParsing="false" onAction="#addService" prefHeight="39.0" prefWidth="97.0" style="-fx-background-color: D82036;" text="Confirm" textAlignment="CENTER" textFill="WHITE" />
+      <Label layoutX="38.0" layoutY="95.0" prefHeight="33.0" prefWidth="86.0" text="Category :">
          <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Button>
-      <Label layoutX="213.0" layoutY="283.0" prefHeight="33.0" prefWidth="121.0" text="Category :" underline="true">
-         <font>
-            <Font name="System Bold" size="24.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="213.0" layoutY="388.0" prefHeight="17.0" prefWidth="121.0" text="Name :" underline="true">
+      <Label layoutX="38.0" layoutY="148.0" prefHeight="27.0" prefWidth="74.0" text="Name :">
          <font>
-            <Font name="System Bold" size="24.0" />
+            <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="servicename" layoutX="363.0" layoutY="393.0" />
-      <Button layoutX="99.0" layoutY="541.0" mnemonicParsing="false" onAction="#retour" prefHeight="39.0" prefWidth="86.0" text="Back">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font>
-      </Button>
-      <Spinner fx:id="spin" layoutX="363.0" layoutY="288.0" />
-      <Label fx:id="verif" layoutX="528.0" layoutY="397.0" prefHeight="17.0" prefWidth="167.0" />
+      <TextField fx:id="servicename" layoutX="134.0" layoutY="146.0" prefHeight="31.0" prefWidth="150.0" />
+      <Button layoutX="32.0" layoutY="30.0" mnemonicParsing="false" onAction="#retour" prefHeight="39.0" prefWidth="86.0" style="-fx-background-color: D82036;" text="Back" textFill="WHITE" />
+      <Spinner fx:id="spin" layoutX="134.0" layoutY="96.0" prefHeight="31.0" prefWidth="150.0" />
+      <Label fx:id="verif" layoutX="127.0" layoutY="179.0" prefHeight="17.0" prefWidth="167.0" />
    </children>
 </AnchorPane>

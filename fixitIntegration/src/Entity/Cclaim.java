@@ -17,9 +17,8 @@ public class Cclaim {
     public Cclaim() {
     }
 
-    public Cclaim(int claim_id, int client_id, String description) {
-        this.claim_id = claim_id;
-        this.client_id = client_id;
+    public Cclaim( String description) {
+     
         this.description = description;
     }
 
@@ -46,6 +45,10 @@ public class Cclaim {
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Cclaim{" + "claim_id=" + claim_id + ", client_id=" + client_id + ", description=" + description + '}';
+    }
     
 }

@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSpinner?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.ProviderController">
    <children>
@@ -20,17 +30,147 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane id="AnchorPane" layoutY="17.0" prefHeight="603.0" prefWidth="900.0">
+      <AnchorPane id="AnchorPane" layoutY="17.0" prefHeight="603.0" prefWidth="717.0">
          <children>
             <AnchorPane layoutY="86.0" prefHeight="517.0" prefWidth="163.0" style="-fx-background-color: #D82036;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="86.0">
                <children>
-                  <JFXButton fx:id="btn_request" layoutX="-1.0" layoutY="93.0" prefHeight="47.0" prefWidth="197.0" style="-fx-background-color: #D8D2D3;" text="My requests" />
                   <JFXButton fx:id="btn_search" layoutY="46.0" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="197.0" style="-fx-background-color: #D8D2D3;" text="Search a job" />
+                  <JFXButton fx:id="btn_profile" layoutX="-3.0" layoutY="93.0" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="190.0" style="-fx-background-color: #D8D2D3;" text="My profile" />
+                  <JFXButton fx:id="btn_claim" layoutX="-6.0" layoutY="140.0" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="197.0" style="-fx-background-color: #D8D2D3;" text="Send Claim" />
+                  <JFXButton fx:id="Sign_out" layoutX="-6.0" layoutY="469.0" onAction="#handleButtonAction" prefHeight="47.0" prefWidth="197.0" style="-fx-background-color: #D8D2D3;" text="Sign out" textFill="WHITE" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="pn_all" layoutX="196.0" layoutY="98.0" prefHeight="502.0" prefWidth="713.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="187.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="98.0">
+            <AnchorPane fx:id="pn_all" layoutX="196.0" layoutY="86.0" prefHeight="517.0" prefWidth="717.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="187.0" AnchorPane.rightAnchor="-187.0" AnchorPane.topAnchor="98.0">
                <children>
-                  <Pane fx:id="pn_search" layoutX="9.0" layoutY="-12.0" prefHeight="517.0" prefWidth="713.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-12.0">
+                  <Pane fx:id="pn_profile" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="532.0" prefWidth="713.0">
+                     <children>
+                        <ScrollPane layoutY="-15.0" prefHeight="544.0" prefWidth="713.0">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="935.0" prefWidth="721.0">
+                                 <children>
+                                    <ImageView fx:id="Photo" fitHeight="119.0" fitWidth="117.0" layoutX="27.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../Documents/NetBeansProjects/Ma_partie/src/GUI/Images/gardener.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#d7263a" height="156.0" layoutX="-3.0" layoutY="150.0" stroke="WHITE" strokeType="INSIDE" width="653.0" />
+                                    <Label fx:id="name1" layoutX="169.0" layoutY="33.0" text="UsrName" />
+                                    <TextArea layoutX="6.0" layoutY="146.0" prefHeight="141.0" prefWidth="621.0" text="This is my description" />
+                                    <AnchorPane fx:id="Annonce" layoutX="19.0" layoutY="386.0" prefHeight="487.0" prefWidth="674.0">
+                                       <children>
+                                          <VBox fx:id="vBoxComments" prefHeight="495.0" prefWidth="674.0">
+                                             <children>
+                                                <HBox prefHeight="215.0" prefWidth="674.0">
+                                                   <children>
+                                                      <TableView fx:id="tableComment" prefHeight="211.0" prefWidth="690.0">
+                                                         <columns>
+                                                            <TableColumn fx:id="adname" prefWidth="158.0" text="Announcement" />
+                                                            <TableColumn fx:id="Clients" prefWidth="178.0" text="Client" />
+                                                            <TableColumn fx:id="Comments" prefWidth="265.0" text="Comment" />
+                                                         </columns>
+                                                      </TableView>
+                                                      <AnchorPane prefHeight="211.0" prefWidth="160.0">
+                                                         <children>
+                                                            <ImageView fitHeight="31.0" fitWidth="45.0" layoutX="8.0" layoutY="174.0" onMouseClicked="#SendComment" onMousePressed="#SendComment" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@images/61140.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <MenuButton fx:id="MenuBtn" layoutX="-3.0" layoutY="174.0" mnemonicParsing="false" opacity="0.0" prefHeight="39.0" prefWidth="54.0">
+                                                               <items>
+                                                                  <MenuItem fx:id="SprimComment" mnemonicParsing="false" onAction="#suprimComment" text="Delete" />
+                                                                  <MenuItem mnemonicParsing="false" onAction="#ModifComment" text="Modify" />
+                                                                  <MenuItem fx:id="Details" mnemonicParsing="false" onAction="#getIdAd" text="Details" />
+                                                                  <MenuItem mnemonicParsing="false" onAction="#Rated" text="Rate" />
+                                                               </items>
+                                                            </MenuButton>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="57.0" prefWidth="674.0">
+                                                   <children>
+                                                      <TextArea fx:id="comment" prefHeight="57.0" prefWidth="575.0" promptText="Write your comments here" />
+                                                      <ImageView fitHeight="36.0" fitWidth="42.0" onMouseClicked="#SendComment" pickOnBounds="true" preserveRatio="true">
+                                                         <HBox.margin>
+                                                            <Insets top="15.0" />
+                                                         </HBox.margin>
+                                                         <image>
+                                                            <Image url="@images/gps.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <AnchorPane prefHeight="57.0" prefWidth="68.0">
+                                                         <children>
+                                                            <ImageView fx:id="LikeBtn" accessibleRole="BUTTON" fitHeight="39.0" fitWidth="45.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@images/thumbs-up-like-gesture-512.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label fx:id="Likes" layoutX="39.0" layoutY="38.0" text="Label" />
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <MenuButton layoutX="572.0" layoutY="14.0" mnemonicParsing="false" onAction="#SettingsAction" text="Settings" textFill="#d82036">
+                                       <items>
+                                          <MenuItem fx:id="DeleteBtn" mnemonicParsing="false" onAction="#DeleteAction" text="Delete Account" />
+                                          <MenuItem fx:id="UpdateBtn" mnemonicParsing="false" onAction="#EditAction" text="Edit Account" />
+                                       </items>
+                                    </MenuButton>
+                                    <AnchorPane id="AnchorPane" layoutX="183.0" layoutY="60.0" prefHeight="47.0" prefWidth="282.0">
+                                       <children>
+                                          <ImageView fx:id="star2" fitHeight="36.0" fitWidth="56.0" layoutX="36.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/etoileOff.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="star3" fitHeight="36.0" fitWidth="56.0" layoutX="72.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/etoileOff.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="star4" fitHeight="36.0" fitWidth="56.0" layoutX="108.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/etoileOff.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="star5" fitHeight="36.0" fitWidth="56.0" layoutX="144.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/etoileOff.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fx:id="star1" fitHeight="36.0" fitWidth="56.0" focusTraversable="true" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/etoileOff.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label fx:id="lblRating" layoutX="180.0" layoutY="13.0" text="Rating" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pn_claim" layoutY="-12.0" prefHeight="544.0" prefWidth="707.0" style="-fx-background-color: #FFFF;">
+                     <children>
+                        <AnchorPane prefHeight="544.0" prefWidth="713.0">
+                           <children>
+                              <Label layoutX="138.0" layoutY="21.0" text="Why would you send this claim? explain in details your problem" textAlignment="CENTER" AnchorPane.leftAnchor="138.0" AnchorPane.topAnchor="21.0" />
+                              <TextArea fx:id="claimDescription" layoutX="95.0" layoutY="84.0" prefHeight="136.0" prefWidth="495.0" promptText="write your claim here " />
+                              <Label fx:id="champObligatoire" layoutX="261.0" layoutY="339.0" opacity="0.0" text="Your claim is obligatory*" />
+                              <JFXButton fx:id="SendClaimBtn" buttonType="RAISED" layoutX="570.0" layoutY="401.0" onMouseClicked="#SendClaim" ripplerFill="#d82036" style="-fx-background-color: #D82036;" text="Send" textFill="WHITE" />
+                              <JFXSpinner fx:id="load" layoutX="524.0" layoutY="401.0" opacity="0.0" prefHeight="31.0" prefWidth="26.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pn_search" layoutX="9.0" layoutY="-12.0" prefHeight="544.0" prefWidth="713.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="-12.0">
                      <children>
                         <TableView fx:id="tableProvider" layoutY="48.0" prefHeight="371.0" prefWidth="713.0">
                            <columns>

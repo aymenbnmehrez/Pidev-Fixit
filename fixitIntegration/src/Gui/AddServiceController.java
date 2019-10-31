@@ -72,7 +72,7 @@ public class AddServiceController implements Initializable {
                 System.out.println(ex);
 
             }
-            Parent root = FXMLLoader.load(getClass().getResource("../GUI/readServices.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("../GUI/Admin.fxml"));
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setScene(scene);
@@ -84,7 +84,7 @@ public class AddServiceController implements Initializable {
 
     @FXML
     private void retour(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("readServices.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         Stage stage = new Stage();

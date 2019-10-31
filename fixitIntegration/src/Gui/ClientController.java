@@ -8,15 +8,21 @@ package Gui;
 import Db.DataSource;
 import Entity.AskService;
 import Entity.Client;
+import Entity.ClientComment;
 import Entity.Service;
 import Entity.ServiceJoinAskService;
 import Service.ServiceAskService;
+import Service.ServiceCclaim;
 import Service.ServiceClient;
+import Service.ServiceClientComment;
+import Service.ServiceComment;
+import Service.ServiceRating;
 import Service.ServiceService;
 import Service.ServiceServiceJoinAskService;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXSpinner;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTimePicker;
@@ -34,6 +40,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -42,18 +49,27 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
@@ -64,6 +80,7 @@ import javafx.util.Callback;
  */
 public class ClientController implements Initializable {
 
+    int nbClick = 0;
     @FXML
     private Pane pn_all, pn_ask, pn_request, pn_gard, pn_plumb, pn_elect, pn_edit;
     @FXML
@@ -99,9 +116,86 @@ public class ClientController implements Initializable {
     ObservableList<String> listStart = FXCollections.observableArrayList("08:00 GMT", "09:00 GMT", "10:00 GMT", "11:00 GMT", "12:00 GMT", "13:00 GMT", "14:00 GMT", "15:00 GMT", "16:00 GMT");
 
     private int categoryId;
+    @FXML
+    private JFXButton btn_share21;
+    @FXML
+    private JFXButton btn_share2;
+    @FXML
+    private JFXButton btn_share1;
+    @FXML
+    private JFXButton btn_share;
+    @FXML
+    private JFXButton btn_delete;
+    @FXML
+    private JFXButton btn_edit;
+    @FXML
+    private JFXButton btn_pay;
+    @FXML
+    private Label name;
+    @FXML
+    private JFXButton btn_profile;
+    @FXML
+    private JFXButton btn_claim;
+    @FXML
+    private Pane pn_claim;
+    @FXML
+    private TextArea claimDescription;
+    @FXML
+    private Label champObligatoire;
+    @FXML
+    private JFXButton SendClaimBtn;
+    @FXML
+    private JFXSpinner load;
+    @FXML
+    private Pane pn_profile;
+    @FXML
+    private ImageView Photo;
+    @FXML
+    private Label name1;
+    private ImageView star2;
+    private ImageView star3;
+    private ImageView star4;
+    private ImageView star5;
+    private ImageView star1;
+    private Label lblRating;
+    private ImageView checked;
+    @FXML
+    private AnchorPane Annonce;
+    @FXML
+    private VBox vBoxComments;
+    @FXML
+    private TableView<ClientComment> tableComment;
+    @FXML
+    private TableColumn<ClientComment, String> adname;
+    @FXML
+    private TableColumn<ClientComment, String> Clients;
+    @FXML
+    private TableColumn<ClientComment, String> Comments;
+    @FXML
+    private MenuButton MenuBtn;
+    @FXML
+    private MenuItem SprimComment;
+    @FXML
+    private MenuItem Details;
+    @FXML
+    private TextArea comment;
+    @FXML
+    private ImageView LikeBtn;
+    @FXML
+    private Label Likes;
+    @FXML
+    private MenuItem DeleteBtn;
+    @FXML
+    private MenuItem UpdateBtn;
+    @FXML
+    private Pane pn_Ads;
+    @FXML
+    private Label idAd_lbl;
+    @FXML
+    private JFXButton Sign_out;
 
     @FXML
-    public void handleButtonAction(ActionEvent event) throws SQLException {
+    public void handleButtonAction(ActionEvent event) throws SQLException, IOException {
 
         if ((event.getSource() == btn_ask) || (event.getSource() == btn_back) || (event.getSource() == btn_back2) || (event.getSource() == btn_back3)) {
             pn_ask.toFront();
@@ -120,10 +214,60 @@ public class ClientController implements Initializable {
             cb_servElect.setItems(listElect);
             categoryId = 30;
             pn_elect.toFront();
-        } else {
+        } else if (event.getSource() == btn_profile) {
+            DisplayComments();
+            AfficherLikes();
+           // AfficherRating();
+            pn_profile.toFront();
+        } else if (event.getSource() == btn_claim) {
+            pn_claim.toFront();
+        } else if (event.getSource() == Sign_out){
+             Parent loader = FXMLLoader.load(getClass().getResource("Login.fxml"));
+
+            Scene scene = new Scene(loader);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+            ((Node) (event.getSource())).getScene().getWindow().hide();
+        }
+        else 
+        {
             pn_all.toFront();
         }
 
+    }
+
+ /*   public void AfficherRating() throws SQLException {
+        ServiceRating sr = new ServiceRating();
+        double Rating = sr.AfficheRating(username);
+        lblRating.setText(Double.toString(Rating));
+
+    }*/
+
+    public void displayTab() throws SQLException {
+        ServiceServiceJoinAskService sjas = new ServiceServiceJoinAskService();
+        ArrayList list = (ArrayList) sjas.getDataAskService2(getClientIdAthenticated());
+        ObservableList<ServiceJoinAskService> data = FXCollections.observableArrayList(list);
+        cl_name.setCellValueFactory(new PropertyValueFactory<>("nameService"));
+        cl_date.setCellValueFactory(new PropertyValueFactory<>("dateAskService"));
+        cl_started_at.setCellValueFactory(new PropertyValueFactory<>("startedAskService"));
+        cl_status.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+        // cl_id.setCellValueFactory(new PropertyValueFactory<>("ask_service_id"));
+        table.setItems(data);
+
+    }
+
+    public void DisplayComments() throws SQLException {
+        ServiceClientComment scc = new ServiceClientComment();
+        ArrayList list = (ArrayList) scc.getDataClientJoinComment(1);
+        ObservableList<ClientComment> data = FXCollections.observableArrayList(list);
+        adname.setCellValueFactory(new PropertyValueFactory<>("AdsName"));
+        Clients.setCellValueFactory(cellData -> Bindings.createStringBinding(
+                () -> cellData.getValue().getClientFirstname() + " " + cellData.getValue().getClientLastname()));
+        Comments.setCellValueFactory(new PropertyValueFactory<>("comment"));
+        tableComment.setItems(data);
+        //  loadData(); 
     }
 
     @Override
@@ -294,20 +438,6 @@ public class ClientController implements Initializable {
         System.out.println(str);
     }
 
-    public void displayTab() throws SQLException {
-        ServiceServiceJoinAskService sjas = new ServiceServiceJoinAskService();
-        ArrayList list = (ArrayList) sjas.getDataAskService2(getClientIdAthenticated());
-        ObservableList<ServiceJoinAskService> data = FXCollections.observableArrayList(list);
-        cl_name.setCellValueFactory(new PropertyValueFactory<>("nameService"));
-        cl_date.setCellValueFactory(new PropertyValueFactory<>("dateAskService"));
-        cl_started_at.setCellValueFactory(new PropertyValueFactory<>("startedAskService"));
-        cl_status.setCellValueFactory(new PropertyValueFactory<>("status"));
-
-        // cl_id.setCellValueFactory(new PropertyValueFactory<>("ask_service_id"));
-        table.setItems(data);
-
-    }
-
     @FXML
     public void deleteAskService(ActionEvent event) throws SQLException {
 
@@ -436,12 +566,13 @@ public class ClientController implements Initializable {
         }
     }
 
-    public void displayPaiement(ActionEvent event) throws IOException ,SQLException{
+    @FXML
+    public void displayPaiement(ActionEvent event) throws IOException, SQLException {
         if (!table.getSelectionModel().isEmpty()) {
             ServiceAskService sas = new ServiceAskService();
             AskService as = new AskService();
             List<AskService> list = new ArrayList<>();
-            list=sas.getAskServiceById(table.getSelectionModel().getSelectedItem().getAskServiceId());
+            list = sas.getAskServiceById(table.getSelectionModel().getSelectedItem().getAskServiceId());
             as = list.get(0);
             int price = as.getPrice();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Paiment.fxml"));
@@ -526,4 +657,223 @@ public class ClientController implements Initializable {
 //        table.getColumns().add(colBtn);
 //
 //    }
+    @FXML
+    public void SendClaim(MouseEvent event) throws SQLException, InterruptedException {
+        ServiceCclaim srC = new ServiceCclaim();
+        // int rslt = srC.ajouterReclamation(claimDescription.getText(), setUser(username));
+        int rslt = srC.ajouterReclamation(claimDescription.getText(), username);
+        if (claimDescription.getText().isEmpty()) {
+            champObligatoire.opacityProperty().setValue(1);
+        } else {
+
+            if (rslt == 1) {
+                champObligatoire.opacityProperty().setValue(1);
+                champObligatoire.setText("Claim is sent successfully");
+            } else {
+                champObligatoire.opacityProperty().setValue(1);
+                champObligatoire.setText("Connexion Error");
+            }
+            claimDescription.clear();
+        }
+    }
+
+   /* private void Rated(MouseEvent event) throws SQLException {
+        ServiceRating sr = new ServiceRating();
+        double Rating = sr.AfficheRating(username);
+        Image activate = new Image("GUI/Images/etoileOn.png");
+        Image validated = new Image("GUI/Images/etoileSelect.png");
+
+        while (star5.isPressed() || star4.isPressed() || star3.isPressed() || star2.isPressed() || star1.isPressed()) {
+            if (star5.isPressed()) {
+                System.out.println("star5 selected");
+                star1.setImage(activate);
+                star2.setImage(activate);
+                star3.setImage(activate);
+                star4.setImage(activate);
+                star5.setImage(activate);
+                Rating = (Rating + 5)/5;
+                sr.AjoutRating(username, Rating);
+                lblRating.setText(String.valueOf(Rating));
+                checked.opacityProperty().setValue(1);
+                break;
+            } else if (star4.isPressed()) {   //win tableau N? 
+                System.out.println("star4 selected");
+                star1.setImage(activate);
+                star2.setImage(activate);
+                star3.setImage(activate);
+                star4.setImage(activate);
+                star5.setImage(validated);
+                Rating =( Rating + 4)/5;
+                sr.AjoutRating(username, Rating);
+                lblRating.setText(String.valueOf(Rating));
+                checked.opacityProperty().setValue(1);
+                break;
+            } else if (star3.isPressed()) {
+                System.out.println("star3 selected");
+                star1.setImage(activate);
+                star2.setImage(activate);
+                star3.setImage(activate);
+                star4.setImage(validated);
+                star5.setImage(validated);
+                Rating = (Rating + 3)/5;
+                sr.AjoutRating(username, Rating);
+                lblRating.setText(String.valueOf(Rating));
+                checked.opacityProperty().setValue(1);
+                break;
+            } else if (star2.isPressed()) {
+                System.out.println("star2 selected");
+                star1.setImage(activate);
+                star2.setImage(activate);
+                star3.setImage(validated);
+                star4.setImage(validated);
+                star5.setImage(validated);
+                Rating = (Rating + 2)/5;
+                sr.AjoutRating(username, Rating);
+                lblRating.setText(String.valueOf(Rating));
+                checked.opacityProperty().setValue(1);
+                break;
+            } else if (star1.isPressed()) {
+                System.out.println("star selected");
+                star1.setImage(activate);
+                star2.setImage(validated);
+                star3.setImage(validated);
+                star4.setImage(validated);
+                star5.setImage(validated);
+                Rating = (Rating + 1)/5;
+                sr.AjoutRating(username, Rating);
+                lblRating.setText(String.valueOf(Rating));
+                checked.opacityProperty().setValue(1);
+                break;
+            }
+        }
+    }*/
+
+    @FXML
+    private void SendComment(MouseEvent event) throws SQLException {
+        if (!comment.getText().isEmpty()) {
+            ServiceComment sc = new ServiceComment();
+            //  sc.ajouterCommentaire(comment.getText(), setUser(username));
+            sc.ajouterCommentaire(comment.getText(), getClientIdAthenticated());
+            DisplayComments();
+        }
+    }
+
+    @FXML
+    private void suprimComment(ActionEvent event) throws SQLException {
+        ServiceComment sc = new ServiceComment();
+        if(!tableComment.getSelectionModel().isEmpty()){
+        sc.SupprimerCommentaire(tableComment.getSelectionModel().getSelectedItem().getCommentId());
+        DisplayComments();}
+    }
+
+    @FXML
+    private void ModifComment(ActionEvent event) throws SQLException, IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ModifComment.fxml"));
+            Parent root = loader.load();
+               ModifCommentController controller = loader.<ModifCommentController>getController();
+            controller.setComment(tableComment.getSelectionModel().getSelectedItem().getComment());
+            controller.setIdComment(tableComment.getSelectionModel().getSelectedItem().getCommentId());
+            System.out.println(tableComment.getSelectionModel().getSelectedItem().getCommentId());
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+            stage.getIcons().add(new Image("/Gui/images/log.png"));
+            
+            
+        setUser(username);
+        int idComment;
+        idComment = tableComment.getSelectionModel().getSelectedItem().getCommentId();
+       // int idAd = getIdAd(event);
+      
+         
+    }
+
+    public void AfficherLikes() throws SQLException {
+        ServiceComment sc = new ServiceComment();
+        int nb = sc.AfficheLike(username);
+        Likes.setText(Integer.toString(nb));
+
+    }
+
+    @FXML
+    private int getIdAd(ActionEvent event) {
+        int idAd = 0;
+        if (!tableComment.getSelectionModel().isEmpty()) {
+            idAd = tableComment.getSelectionModel().getSelectedItem().getAdId();
+            pn_Ads.toFront();
+            idAd_lbl.setText(Integer.toString(idAd));
+        }
+        System.out.println(idAd);
+        return idAd;
+    }
+
+    @FXML
+    private void AddLike(MouseEvent event) throws SQLException {
+        nbClick++;
+        if (nbClick == 0) {
+            setUser(username);
+            ServiceComment sc = new ServiceComment();
+            sc.AjoutLike("metal");
+            AfficherLikes();
+        } else {
+            LikeBtn.isDisable();
+        }
+    }
+
+    @FXML
+    private void DeleteAction(ActionEvent event) throws IOException {
+
+        ServiceClient sp = new ServiceClient();
+        try {
+            sp.delClient(username);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+
+        }
+    }
+
+    @FXML
+    private void EditAction(ActionEvent event) throws IOException, SQLException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("modifClient.fxml"));
+        Parent root = loader.load();
+        ModifClientController controlleerr = loader.<ModifClientController>getController();
+        controlleerr.setUser(username);
+        ServiceClient sevc = new ServiceClient();       //getting client_id of the authentificated client
+        List<Client> listC = new ArrayList<>();
+        listC = sevc.getdata(username);
+        Client c = listC.get(0);
+
+        controlleerr.setInfo(c.getFirst_name(), c.getLast_name(), c.getPassword(), c.getAddress(), c.getMail(), c.getPhone());
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    private void SettingsAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void Rated(ActionEvent event) throws IOException {
+           FXMLLoader loader = new FXMLLoader(getClass().getResource("Rate.fxml"));
+        Parent root = loader.load();
+       RateController controlleerr = loader.<RateController>getController();
+        controlleerr.setIdP(tableComment.getSelectionModel().getSelectedItem().getProvider_id());
+        ServiceClient sevc = new ServiceClient();  
+          Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+        
+    }
 }

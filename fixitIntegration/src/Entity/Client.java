@@ -16,7 +16,7 @@ public class Client {
     private String password;
     private String first_name;
     private String last_name;
-    private String adress;
+    private String address;
     private int phone;
     private String mail;
     private int fidelity_pt;
@@ -25,36 +25,36 @@ public class Client {
     public Client() {
     }
 
-    public Client(int client_id, String username, String password, String first_name, String last_name, String adress, int phone, String mail) {
+    public Client(int client_id, String username, String password, String first_name, String last_name, String address, int phone, String mail) {
         this.client_id = client_id;
         this.username = username;
         this.password = password;
         this.first_name = first_name;
         this.last_name = last_name;
-        this.adress = adress;
+        this.address = address;
         this.phone = phone;
         this.mail = mail;
     }
 
-    public Client(int client_id, String username, String password, String first_name, String last_name, String adress, int phone, String mail, int fidelity_pt, String image) {
+    public Client(int client_id, String username, String password, String first_name, String last_name, String address, int phone, String mail, int fidelity_pt, String image) {
         this.client_id = client_id;
         this.username = username;
         this.password = password;
         this.first_name = first_name;
         this.last_name = last_name;
-        this.adress = adress;
+        this.address = address;
         this.phone = phone;
         this.mail = mail;
         this.fidelity_pt = fidelity_pt;
         this.image = image;
     }
 
-    public Client(String username, String password, String first_name, String last_name, String adress, int phone, String mail) {
+    public Client(String username, String password, String first_name, String last_name, String address, int phone, String mail) {
         this.username = username;
         this.password = password;
         this.first_name = first_name;
         this.last_name = last_name;
-        this.adress = adress;
+        this.address = address;
         this.phone = phone;
         this.mail = mail;
     }
@@ -92,8 +92,8 @@ public class Client {
         this.last_name = last_name;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public void setPhone(int phone) {
@@ -124,8 +124,8 @@ public class Client {
         return last_name;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
     public int getPhone() {
@@ -143,7 +143,6 @@ public class Client {
     public String getImage() {
         return image;
     }
-    
     
     
 }

@@ -3,15 +3,50 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/aymen/OneDrive/Bureau/Pidev-Fixit/fixitIntegration/src/Gui/AddServiceController.java</file>
-            <file>file:/C:/Users/aymen/OneDrive/Bureau/Pidev-Fixit/fixitIntegration/src/Service/ServiceService.java</file>
-            <file>file:/C:/Users/aymen/OneDrive/Bureau/Pidev-Fixit/fixitIntegration/src/Gui/FXMLFixitController.java</file>
-            <file>file:/C:/Users/aymen/OneDrive/Bureau/Pidev-Fixit/fixitIntegration/src/Gui/readServices.fxml</file>
-            <file>file:/C:/Users/aymen/OneDrive/Bureau/Pidev-Fixit/fixitIntegration/src/fixit/Fixit.java</file>
-            <file>file:/C:/Users/aymen/OneDrive/Bureau/Pidev-Fixit/fixitIntegration/src/Gui/ReadServicesController.java</file>
-            <file>file:/C:/Users/aymen/OneDrive/Bureau/Pidev-Fixit/fixitIntegration/src/Gui/FixitFXMain.java</file>
-            <file>file:/C:/Users/aymen/OneDrive/Bureau/Pidev-Fixit/fixitIntegration/src/Entity/Service.java</file>
-            <file>file:/C:/Users/aymen/OneDrive/Bureau/Pidev-Fixit/fixitIntegration/src/Entity/HeaderFooter.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/Admin.fxml</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Service/ServiceAskService.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Service/ServiceComment.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Entity/Comment.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/ModifCommentController.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/formClient.fxml</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Service/ServiceCclaim.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Entity/Pclaim.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/AuthProviderController.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/FixitFXMain.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Service/ServiceClient.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Service/ServicePclaim.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/RateController.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/FormClientController.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/Rate.fxml</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Entity/ClientJoinServiceJoinAskService.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Entity/Client.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/FXMLFixitController.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Entity/ServiceJoinAskService.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/modifClient.fxml</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/AddServiceController.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Service/ServiceRating.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Entity/Cclaim.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/modifProvider.fxml</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/PaimentController.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/formProv.fxml</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Entity/Provider.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Service/WriteToExcel.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Service/ServiceClientComment.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Db/DataSource.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/ClientController.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Service/ServiceService.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Entity/Ad.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/FormProvController.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/ModifProviderController.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/LoginController.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/ModifComment.fxml</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Entity/ClientComment.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/AdminController.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Service/ServiceProvider.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/Login.fxml</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/ProviderController.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Service/ServiceServiceJoinAskService.java</file>
+            <file>file:/C:/Users/Koala%20girl/Desktop/Pidev-Fixit/fixitIntegration/src/Gui/ModifClientController.java</file>
         </group>
     </open-files>
 </project-private>
