@@ -17,7 +17,6 @@ import Service.*;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.PageSize;
-import com.itextpdf.text.pdf.PdfPageEvent;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -75,7 +74,7 @@ public class Fixit {
                     new File(TITLE + PDF_EXTENSION)));
             HeaderFooter event = new HeaderFooter();
             event.setHeader("Test Report");
-            writer.setPageEvent((PdfPageEvent) event);
+            writer.setPageEvent(event);
             document.open();
             PDFCreator.addMetaData(document, TITLE);
             PDFCreator.addTitlePage(document, TITLE);
