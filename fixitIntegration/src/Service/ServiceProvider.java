@@ -103,6 +103,7 @@ ste.executeUpdate(requete);
         }
         return false;
     }
+<<<<<<< HEAD
             public int select(String username) throws SQLException {
         List<Provider> list = new ArrayList<>();
         
@@ -269,6 +270,22 @@ public List<Provider> readAll2(String username) throws SQLException
   if (!((c >= '0' && c <= '9'))){return false;}
           }return true;}
            public List<Provider> displayProvider2(String username) throws SQLException {
+=======
+     
+             public Provider getProviderByUsername(String username)throws SQLException{
+        
+            String req ="select * from provider where username='"+username+"'";
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery(req);
+            Provider p=new Provider();
+            if (rs.next()) {
+            p.setProvider_id(rs.getInt("provider_id"));
+            p.setUsername(rs.getString("username"));
+            }
+            return p;
+        }
+             public List<Provider> displayProvider(String username) throws SQLException {
+>>>>>>> 4b6d6d3b1aa0f55c096fb62d55e8e5e550ccbe22
         List<Provider> list = new ArrayList<>();
         ResultSet res = ste.executeQuery("select * from provider where username='"+username+"'");
         Provider cl = null;

@@ -6,11 +6,14 @@
 package Gui;
 
 import Db.DataSource;
+import Entity.Ad;
+import Entity.Ads;
 import Entity.AskService;
 import Entity.Client;
 import Entity.ClientComment;
 import Entity.Service;
 import Entity.ServiceJoinAskService;
+import Service.ServiceAd;
 import Service.ServiceAskService;
 import Service.ServiceCclaim;
 import Service.ServiceClient;
@@ -19,6 +22,7 @@ import Service.ServiceComment;
 import Service.ServiceRating;
 import Service.ServiceService;
 import Service.ServiceServiceJoinAskService;
+import Service.serviceProviderJoinAd;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
@@ -33,6 +37,8 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import static java.sql.Types.NULL;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -62,11 +68,20 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+<<<<<<< HEAD
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+=======
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
+>>>>>>> 4b6d6d3b1aa0f55c096fb62d55e8e5e550ccbe22
 
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -80,11 +95,16 @@ import javafx.util.Callback;
  */
 public class ClientController implements Initializable {
 
+<<<<<<< HEAD
     int nbClick = 0;
+=======
+    int x=NULL;
+    private com.mysql.jdbc.Connection con;
+>>>>>>> 4b6d6d3b1aa0f55c096fb62d55e8e5e550ccbe22
     @FXML
-    private Pane pn_all, pn_ask, pn_request, pn_gard, pn_plumb, pn_elect, pn_edit;
+    private Pane pn_all, pn_ask, pn_request, pn_gard, pn_plumb, pn_elect, pn_edit,pn_show_ads;
     @FXML
-    private JFXButton btn_ask, btn_request, btn_gard, btn_plumb, btn_elect, btn_back, btn_back2, btn_back3;
+    private JFXButton btn_ask, btn_request, btn_gard, btn_plumb, btn_elect, btn_back, btn_back2, btn_back3,btn_show_ads;
     @FXML
     private JFXComboBox<String> cb_serv, cb_serv1, cb_start, cb_start1, cb_servGard, cb_startGard, cb_servElect, cb_startElect;
     @FXML
@@ -117,6 +137,7 @@ public class ClientController implements Initializable {
 
     private int categoryId;
     @FXML
+<<<<<<< HEAD
     private JFXButton btn_share21;
     @FXML
     private JFXButton btn_share2;
@@ -124,6 +145,11 @@ public class ClientController implements Initializable {
     private JFXButton btn_share1;
     @FXML
     private JFXButton btn_share;
+=======
+    private JFXButton btn_share2;
+    @FXML
+    private JFXButton btn_share21;
+>>>>>>> 4b6d6d3b1aa0f55c096fb62d55e8e5e550ccbe22
     @FXML
     private JFXButton btn_delete;
     @FXML
@@ -131,6 +157,7 @@ public class ClientController implements Initializable {
     @FXML
     private JFXButton btn_pay;
     @FXML
+<<<<<<< HEAD
     private Label name;
     @FXML
     private JFXButton btn_profile;
@@ -193,6 +220,68 @@ public class ClientController implements Initializable {
     private Label idAd_lbl;
     @FXML
     private JFXButton Sign_out;
+=======
+    private JFXButton btn_share1;
+    @FXML
+    private JFXButton btn_share;
+    @FXML
+    private TableView<Ad> TableAd;
+    @FXML
+    private TableColumn<Ad, String> C_title;
+    @FXML
+    private TableColumn<Ad, String> C_availability;
+    @FXML
+    private TableColumn<Ad, String> C_description;
+    @FXML
+    private TableColumn<Ad, String> C_published;
+    @FXML
+    private Label txt_Titre;
+    @FXML
+    private Label txt_firstName;
+    @FXML
+    private Label txt_lastName;
+    @FXML
+    private Label txt_addr;
+    @FXML
+    private Label txt_availability;
+    @FXML
+    private Label txt_publishedAt;
+    @FXML
+    private ImageView image_ad;
+    @FXML
+    private TextArea tf_description;
+    @FXML
+    private Label tf_firstName;
+    @FXML
+    private Label tf_lastName;
+    @FXML
+    private Label tf_addr;
+    @FXML
+    private Label tf_availability;
+    @FXML
+    private Label tf_phone;
+    @FXML
+    private Label tf_mail;
+    @FXML
+    private Label tf_rate;
+    @FXML
+    private Label tf_publishedAt;
+    @FXML
+    private Label txt_phone;
+    @FXML
+    private Label txt_rate1;
+    @FXML
+    private Label txt_rate;
+    @FXML
+    private Label txt_mail;
+    @FXML
+    private TextField searchInput;
+    @FXML
+    private Label tf_titre;
+    @FXML
+    private Label name;
+   
+>>>>>>> 4b6d6d3b1aa0f55c096fb62d55e8e5e550ccbe22
 
     @FXML
     public void handleButtonAction(ActionEvent event) throws SQLException, IOException {
@@ -200,6 +289,7 @@ public class ClientController implements Initializable {
         if ((event.getSource() == btn_ask) || (event.getSource() == btn_back) || (event.getSource() == btn_back2) || (event.getSource() == btn_back3)) {
             pn_ask.toFront();
         } else if (event.getSource() == btn_request) {
+            System.out.println(getClientIdAthenticated());
             displayTab();
             pn_request.toFront();
         } else if (event.getSource() == btn_gard) {
@@ -214,6 +304,7 @@ public class ClientController implements Initializable {
             cb_servElect.setItems(listElect);
             categoryId = 30;
             pn_elect.toFront();
+<<<<<<< HEAD
         } else if (event.getSource() == btn_profile) {
             DisplayComments();
             AfficherLikes();
@@ -232,6 +323,13 @@ public class ClientController implements Initializable {
         }
         else 
         {
+=======
+        } else if (event.getSource() == btn_show_ads) {
+            displayAds();
+            pn_show_ads.toFront();
+        }  
+        else {
+>>>>>>> 4b6d6d3b1aa0f55c096fb62d55e8e5e550ccbe22
             pn_all.toFront();
         }
 
@@ -438,6 +536,23 @@ public class ClientController implements Initializable {
         System.out.println(str);
     }
 
+<<<<<<< HEAD
+=======
+   public void displayTab() throws SQLException {
+        ServiceServiceJoinAskService sjas = new ServiceServiceJoinAskService();
+        ArrayList list = (ArrayList) sjas.getDataAskService2(getClientIdAthenticated());
+        ObservableList<ServiceJoinAskService> data = FXCollections.observableArrayList(list);
+        cl_name.setCellValueFactory(new PropertyValueFactory<>("nameService"));
+        cl_date.setCellValueFactory(new PropertyValueFactory<>("dateAskService"));
+        cl_started_at.setCellValueFactory(new PropertyValueFactory<>("startedAskService"));
+        cl_status.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+        // cl_id.setCellValueFactory(new PropertyValueFactory<>("ask_service_id"));
+        table.setItems(data);
+
+    }
+
+>>>>>>> 4b6d6d3b1aa0f55c096fb62d55e8e5e550ccbe22
     @FXML
     public void deleteAskService(ActionEvent event) throws SQLException {
 
@@ -567,7 +682,11 @@ public class ClientController implements Initializable {
     }
 
     @FXML
+<<<<<<< HEAD
     public void displayPaiement(ActionEvent event) throws IOException, SQLException {
+=======
+    public void displayPaiement(ActionEvent event) throws IOException ,SQLException{
+>>>>>>> 4b6d6d3b1aa0f55c096fb62d55e8e5e550ccbe22
         if (!table.getSelectionModel().isEmpty()) {
             ServiceAskService sas = new ServiceAskService();
             AskService as = new AskService();
@@ -588,6 +707,80 @@ public class ClientController implements Initializable {
         }
 
     }
+    
+    
+    public void displayAds(){
+        ServiceAd s = new ServiceAd();
+        ArrayList<Ad> ads;
+        try {
+            ads = (ArrayList<Ad>) s.readAll();
+            ObservableList<Ad> data = FXCollections.observableArrayList(ads);
+            C_title.setCellValueFactory(new PropertyValueFactory<>("ad_name"));
+            C_availability.setCellValueFactory(new PropertyValueFactory<>("availability"));
+            C_description.setCellValueFactory(new PropertyValueFactory<>("description"));
+            C_published.setCellValueFactory(new PropertyValueFactory<>("published_at"));
+            TableAd.setItems(data);
+        } catch (SQLException ex) {
+            Logger.getLogger(ClientController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    
+       @FXML
+    private void select_ad(MouseEvent event) throws SQLException {
+        con = (com.mysql.jdbc.Connection) DataSource.getInstance().getConnection();
+        if (TableAd.getSelectionModel().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Alert!");
+            alert.setContentText("you have to select an Ad for more details ! !");
+            alert.showAndWait();
+        } else {
+            serviceProviderJoinAd sp=new serviceProviderJoinAd();
+            Ads ads =new Ads();
+            ads = sp.getAdById(TableAd.getSelectionModel().getSelectedItem().getAd_id());
+            tf_titre.setText(ads.getAd_name());
+            SimpleDateFormat dateFormater;
+            dateFormater = new SimpleDateFormat("yyyy-MM-dd");
+            tf_availability.setText(dateFormater.format(ads.getAvailability()));
+            tf_description.setText(ads.getDescription());
+            tf_publishedAt.setText(ads.getPublished_at().toString());
+            tf_firstName.setText(ads.getFirst_name());
+            tf_lastName.setText(ads.getLast_name());
+            tf_addr.setText(ads.getAdress());
+            tf_phone.setText(String.valueOf(ads.getPhone()));
+            tf_mail.setText(ads.getMail());
+            tf_rate.setText(String.valueOf(ads.getRating()));
+            
+           
+            
+
+            String req = "select image from ad where ad_id=" + TableAd.getSelectionModel().getSelectedItem().getAd_id();
+            try {
+                Statement st = con.createStatement();
+                ResultSet rs = st.executeQuery(req);
+                if (rs.next()) {
+                    String title = rs.getString("image");
+                    System.out.println(title);
+
+                    Image image = new Image("file:C:/wamp64/www/imageAd/" + title);
+                     image_ad.setImage(image);
+    }}catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }}
+
+    @FXML
+    private void searchTable(KeyEvent event) throws SQLException {
+             String s= searchInput.getText();
+        ObservableList<Ad> data = null;
+        data = FXCollections.observableArrayList(new ServiceAd().filtrerAd(s));
+            C_title.setCellValueFactory(new PropertyValueFactory<>("ad_name"));
+            C_availability.setCellValueFactory(new PropertyValueFactory<>("availability"));
+            C_description.setCellValueFactory(new PropertyValueFactory<>("description"));
+            C_published.setCellValueFactory(new PropertyValueFactory<>("published_at"));
+            TableAd.setItems(data);
+    }
+    
     //    }
 
 //    private void addButtonToTable() {
@@ -657,6 +850,7 @@ public class ClientController implements Initializable {
 //        table.getColumns().add(colBtn);
 //
 //    }
+<<<<<<< HEAD
     @FXML
     public void SendClaim(MouseEvent event) throws SQLException, InterruptedException {
         ServiceCclaim srC = new ServiceCclaim();
@@ -876,4 +1070,8 @@ public class ClientController implements Initializable {
         stage.show();
         
     }
+=======
+
+ 
+>>>>>>> 4b6d6d3b1aa0f55c096fb62d55e8e5e550ccbe22
 }

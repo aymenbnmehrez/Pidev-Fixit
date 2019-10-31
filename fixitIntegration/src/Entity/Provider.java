@@ -236,4 +236,9 @@ public class Provider {
     }
     
 
+    public Provider(int provider_id) {
+        this.provider_id = provider_id;
+    }
+    
+
 }

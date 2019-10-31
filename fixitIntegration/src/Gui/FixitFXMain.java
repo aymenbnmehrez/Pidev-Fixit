@@ -26,7 +26,15 @@ public class FixitFXMain extends Application {
     public void start(Stage primaryStage) {
 
         try {
+<<<<<<< HEAD
             Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+=======
+<<<<<<< HEAD
+            Parent root = FXMLLoader.load(getClass().getResource("AuthProvider.fxml"));
+=======
+            Parent root = FXMLLoader.load(getClass().getResource("ReadServices.fxml"));
+>>>>>>> 0d0cf9529473dd5badaf188d96a9b4cef0186c11
+>>>>>>> 4b6d6d3b1aa0f55c096fb62d55e8e5e550ccbe22
                     Scene scene = new Scene(root);      
                     primaryStage.setScene(scene);
                     primaryStage.show();
